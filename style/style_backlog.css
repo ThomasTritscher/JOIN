@@ -7,30 +7,6 @@
     margin-left: 150px;
 }
 
-.headline {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 95%;
-    margin-bottom: 48px;
-}
-
-h2 {
-    font-size: 24px;
-    color: rgb(41, 41, 41);
-    margin-bottom: 4px;
-}
-
-.small-text {
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.color-blue {
-    color: #1e3190;
-}
-
 .card-header {
     display: flex;
     justify-content: center;
