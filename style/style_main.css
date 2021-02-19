@@ -71,9 +71,3 @@ body {
     color: white;
 }
 
-.main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}

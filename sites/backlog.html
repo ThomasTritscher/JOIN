@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/style_main.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="../style/style_main.css" type="text/css">
+    <link rel="stylesheet" href="../style/style_backlog.css" type="text/css">
     <title>JOIN</title>
 </head>
 <body>
@@ -37,8 +37,39 @@
 
     <div class="main-content">
 
+        <div class="headline">
+
+            <h2>Backlog</h2>
+
+            <span class="small-text color-blue">Learning Management System Project</span>
+
+        </div>
+
+        <div class="card-header">
+
+            <table>
+                <tr>
+                    <td class="first-td-backlog">Assigned to</td>
+                    <td class="second-td-backlog">Category</td>
+                    <td class="third-td-backlog text-align-right">Details</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="mdc-card card-custom">
+            <table>
+                <tr>
+                    <td class="first-td-backlog">Name, Email</td>
+                    <td class="second-td-backlog">Category</td>
+                    <td class="third-td-backlog">Details</td>
+                </tr>
+            </table>
+          </div>
+
     </div>
 
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="../script/script_main.js"></script>
 
 </body>
