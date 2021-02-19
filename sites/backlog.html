@@ -25,10 +25,10 @@
         <nav class="menu-navigation">
 
             <ul>
-                <li><div class="line-navigation"></div><a href="#">Board</a></li>
-                <li><div class="line-navigation"></div><a href="#">Backlog</a></li>
-                <li><div class="line-navigation"></div><a href="#">Add Task</a></li>
-                <li><div class="line-navigation"></div><a href="#">Help</a></li>
+                <li onmouseover="navItemMove(1)" onmouseout="navItemEnd(1)"><div id="lineNav1" class="line-navigation"></div><a href="#">Board</a></li>
+                <li onmouseover="navItemMove(2)" onmouseout="navItemEnd(2)"><div id="lineNav2" class="line-navigation"></div><a href="#">Backlog</a></li>
+                <li onmouseover="navItemMove(3)" onmouseout="navItemEnd(3)"><div id="lineNav3" class="line-navigation"></div><a href="#">Add Task</a></li>
+                <li onmouseover="navItemMove(4)" onmouseout="navItemEnd(4)"><div id="lineNav4" class="line-navigation"></div><a href="#">Help</a></li>
             </ul>
 
         </nav>
@@ -38,6 +38,8 @@
     <div class="main-content">
 
     </div>
+
+    <script src="../script/script_main.js"></script>
 
 </body>
 </html>

@@ -46,9 +46,10 @@ body {
 
 .line-navigation {
     display: flex;
-    width: 5px;
+    width: 0px;
     height: 18px;
     margin-right: 32px;
+    transition: all 225ms ease-in-out;
     background-color: white;
 }
 
@@ -64,6 +65,8 @@ body {
 }
 
 .menu-navigation li a {
+    display: flex;
+    width: 100%;
     text-decoration: none;
     color: white;
 }
