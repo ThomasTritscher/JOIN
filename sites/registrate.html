@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../style/style_main.css" type="text/css">
+    <link rel="stylesheet" href="../style/style_backlog.css" type="text/css">
+    <title>JOIN</title>
+</head>
+
+<body>
+    <div class="menu-container">
+
+        <div class="logo">
+
+            <img src="../img/logo/logo.png" alt="Logo">
+
+        </div>
+
+        <nav class="menu-navigation">
+
+            <ul>
+                <li onmouseover="navItemMove(1)" onmouseout="navItemEnd(1)">
+                    <div id="lineNav1" class="line-navigation"></div><a href="#">Board</a>
+                </li>
+                <li onmouseover="navItemMove(2)" onmouseout="navItemEnd(2)">
+                    <div id="lineNav2" class="line-navigation"></div><a href="./backlog.html">Backlog</a>
+                </li>
+                <li onmouseover="navItemMove(3)" onmouseout="navItemEnd(3)">
+                    <div id="lineNav3" class="line-navigation"></div><a href="./add_task.html">Add Task</a>
+                </li>
+                <li onmouseover="navItemMove(4)" onmouseout="navItemEnd(4)">
+                    <div id="lineNav4" class="line-navigation"></div><a href="./help.html">Help</a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </div>
+</body>
+
+</html>
