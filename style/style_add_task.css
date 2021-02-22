@@ -2,7 +2,88 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    height: 100vh;
+    align-items: ;
+    height: 150vh;
     margin-left: 150px;
+}
+
+.headline{
+    margin-left: 20px;
+}
+
+.input-field {
+    background-color: rgb(244, 243, 251);
+    width: 1000px;
+    margin-left: 20px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.title-input-field{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding-bottom: 35px;
+    
+}
+
+.title-name{
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(55, 55, 129);
+    margin-bottom: 20px;
+}
+
+.input{
+    width: 400px;
+    height: 45px;
+    padding: 5px;
+    font-size: 30px
+}
+
+.select-input{
+    width: 414px;
+    height: 62px;
+    padding: 5px;
+    font-size: 30px;
+
+}
+
+.assigned-title-name{
+    margin-bottom: 64px;
+}
+
+.text-input{
+    width: 400px;
+    height: 145px;
+    padding: 5px;
+    font-size: 30px
+}
+
+
+.user-img{
+    width: 50px;
+}
+
+
+
+
+.button{
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    margin-left: 108px;
+}
+
+.mdc-button--raised{
+margin-left: 60px;
+}
+
+
+.mdc-button__label{
+    
+    font-weight: bold;
+    font-size: 16px;
+    
 }
