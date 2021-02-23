@@ -1,4 +1,4 @@
-setURL('../backend');
+setURL('http://server-58.developerakademie.com/JOIN/backend');
 
 /**
  * This function sets margin-right of the lineNav element to 8px and the width of lineNav to 6px.
