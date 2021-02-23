@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../style/style_main.css" type="text/css">
     <link rel="stylesheet" href="../style/style_login.css" type="text/css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+
     <title>JOIN</title>
 </head>
 
@@ -51,16 +53,17 @@
             <div class="login-logo">
                 <img src="../img/logo/logo.png" alt="Logo">
             </div>
-            <div class="login-card">
-                <div class="input-section">
-                    <span>Benutzername</span>
-                    <input type="text" class="input-field" id="username"></input>
+            <div class="login-card input-section">
+                <div class="mb-3">
+                    <label for="Username" class="form-label">Benutzername</label>
+                    <input  class="form-control input-field" id="username" aria-describedby="">
                 </div>
-                <div class="input-section">
-                    <span>Passwort</span>
-                    <input type="password" class="input-field" id="password"></input>
+                <div class="mb-3">
+                    <label for="Password" class="form-label">Passwort</label>
+                    <input type="password" value="pwrd" class="form-control input-field" id="password" aria-describedby="">
+                    <input type="checkbox" onclick="myFunction()">  Passwort anzeigen
                 </div>
-                <button onclick="login()" class="btn-custom mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                <button onclick="login()" class="btn-custom btn-primary">
                     Anmelden
                 </button>
             </div>
