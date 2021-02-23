@@ -34,6 +34,9 @@ function navItemEnd(lineNumber) {
     lineNavigation.style.marginRight = '32px';
     lineNavigation.style.width = '0px';
 }
+/**
+ * This function compares the username with the password from the Json Array
+ */
 function login(i) {
     let loginSuccessful = false;
     for (let i = 0; i < user.length; i++) {
@@ -41,9 +44,17 @@ function login(i) {
             loginSuccessful = true;
         }
     }
-    if (loginSuccessful) {
-        window.location.href = 'add_task.html';
+    if (loginSuccessful) { 
+        window.location.href = '../sites/add_task.html';
     } else {
         alert('Das Passwort ist leider falsch');
     }
 }
+function myFunction() {
+    let x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
