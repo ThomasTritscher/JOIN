@@ -56,14 +56,98 @@
 
         </div>
 
-        <div class="card-add-task">
+        <div class="input-field">
+            <div class="title-input-field">
+                <div>
+                    <div class="title-name">
+                        Title
+                    </div>
+                    <div>
+                        <input class="input"> </input>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="title-name">
+                        DUE DATE
+                    </div>
+                    <div>
+                        <input type="date" value="2017-06-01" class="input"></input>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="title-input-field">
+                <div>
+                    <div class="title-name">
+                        CATEGORY
+                    </div>
+                    <div>
+                        <select class="select-input">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                        </select>
+                                            
+                    </div>
+                </div>
+
+                <div>
+                    <div class="title-name">
+                        URGENCY
+                    </div>
+                    <div>
+                        <select class="select-input">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="title-input-field ">
+                <div>
+                    <div class="title-name">
+                        DESCRIPTION
+                    </div>
+                    <div>
+                        <textarea placeholder="Lorem ipsum dolor sit, amet consectetur officiis quos magni esse molestias sit a!" 
+                        class="text-input"></textarea>
+                        
+                    </div>
+                </div>
+                
+
+                <div class="assigned-div">
+                   
+                    <div class="title-name assigned-title-name">
+                        ASSIGNED TO
+                    </div>
+                    <div class="img-icons">
+                        <img class="user-img" src="../img/icons/user-img.png">
+                        <img src="../img/icons/icon plus.png">
+                    </div>
+
+                    <div class="button">
+                        <button class="mdc-button">
+                            <span class="mdc-button__label">CANCEL</span>
+                         </button>
+                        <button class="mdc-button mdc-button--raised">
+                            <span class="mdc-button__label">CREATE TASK</span>
+                          </button>
+                    </div>
+
+                </div>
+            </div>
 
             
         </div>
 
     </div>
 
-    <script src="../backend/mini_backend.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="../script/script_main.js"></script>
 
