@@ -4,6 +4,11 @@ let taskDate;
 let taskCategory;
 let taskUrgency;
 let taskDescription;
+let titleInput = document.getElementById('title-input');
+let dateInput = document.getElementById('date-input');
+let categoryInput = document.getElementById('category-input');
+let urgencyInput = document.getElementById('urgency-input');
+let descriptionInput = document.getElementById('description-input');
 
 setURL('http://server-58.developerakademie.com/JOIN/backend');
 
@@ -39,7 +44,6 @@ async function init() {
  * This function gets the title from the input and saves it in taskTitle.
  */
 function getTitle() {
-    let titleInput = document.getElementById('title-input');
     taskTitle = titleInput.value;
 }
 
@@ -47,7 +51,6 @@ function getTitle() {
  * This function gets the date from the input and saves it in taskDate.
  */
 function getDate() {
-    let dateInput = document.getElementById('date-input');
     taskDate = dateInput.value; 
 }
 
@@ -55,7 +58,6 @@ function getDate() {
  * This function gets the category from the input and saves it in taskCategory.
  */
 function getCategory() {
-    let categoryInput = document.getElementById('category-input');
     taskCategory = categoryInput.value; 
 }
 
@@ -63,7 +65,6 @@ function getCategory() {
  * This function gets the urgency from the input and saves it in taskUrgency.
  */
 function getUrgency() {
-    let urgencyInput = document.getElementById('urgency-input');
     taskUrgency = urgencyInput.value; 
 }
 
@@ -71,7 +72,6 @@ function getUrgency() {
  * This function gets the description from the input and saves it in taskDescription.
  */
 function getDescription() {
-    let descriptionInput = document.getElementById('description-input');
     taskDescription = descriptionInput.value; 
 }
 

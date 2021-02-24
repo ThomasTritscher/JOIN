@@ -8,6 +8,26 @@ h3 {
     margin-bottom: 0.2rem;
 }
 
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    margin-left: 150px;
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 34px;
+}
+
+.headline {
+    margin-left: 45px;
+}
+
 .menu-container {
     position        : fixed;
     display         : flex;
@@ -71,17 +91,10 @@ h3 {
     color          : white;
 }
 
-.main-content {
-    display        : flex;
-    justify-content: center;
-    height         : 100vh;
-}
-
 .dashboard-section {
     display       : flex;
     flex-direction: column;
     align-items   : center;
-    margin-top    : 2rem;
 
 }
 
