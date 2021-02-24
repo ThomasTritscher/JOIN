@@ -19,3 +19,12 @@ function navItemEnd(lineNumber) {
     lineNavigation.style.marginRight = '32px';
     lineNavigation.style.width = '0px';    
 }
+
+/**
+ * Downloads data from server.
+ */
+async function init() {
+    await downloadFromServer();
+    users = JSON.parse(backend.getItem('users')) || [];
+    userDatabase = JSON.parse(backend.getItem('userDatabase')) || [];
+}
