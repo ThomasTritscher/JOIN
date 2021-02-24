@@ -32,8 +32,7 @@ function navItemEnd(lineNumber) {
  */
 async function init() {
     await downloadFromServer();
-    users = JSON.parse(backend.getItem('users')) || [];
-    userDatabase = JSON.parse(backend.getItem('userDatabase')) || [];
+    tasks = JSON.parse(backend.getItem('tasks')) || [];
 }
 
 /**
@@ -81,7 +80,12 @@ function cancelTask() {
 }
 
 function addTask() {
+    getTitle();
+    getDate();
+    getCategory();
+    getUrgency();
+    getDescription();
     newTask = {'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'urgency': taskUrgency, 'description': taskDescription};
     tasks.push(newTask);
-    backend.setItem('tasks', JSON.stringify(users));
+    backend.setItem('tasks', JSON.stringify(tasks));
 }
