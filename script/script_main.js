@@ -113,3 +113,19 @@ function generateBacklogCardTemplate(taskPosition) {
             <div class="first-div-backlog">Name<br> Email</div><div class="second-div-backlog">${tasks[taskPosition].category}</div>
             <div class="third-div-backlog">${tasks[taskPosition].description}</div></div></div>`
 }
+
+// This function generate board tasks
+
+function showBoardTasks() {
+
+    await init();
+    let pushboardToDo = document.getElementById('pushboard-to-do');
+    pushboardToDo.innerHTML = '';
+    for (let i = 0; i < tasks.length; i++) {
+        pushboardToDo.innerHTML += generateBoardToDo();
+    }
+}
+
+function generateBoardToDo(taskPosition) {
+    return `<div>${tasks[taskPosition].taskTitle}</div>`
+}

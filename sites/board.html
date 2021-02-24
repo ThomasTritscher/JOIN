@@ -14,7 +14,7 @@
     <title>JOIN</title>
 </head>
 
-<body>
+<body onload="showBoardTasks()">
 
     <div class="menu-container">
 
@@ -56,19 +56,19 @@
         <div class="dashboard-container">
             <div class="dashboard-section">
                 <h3>TO-DO</h3>
-                <div class="pushboard"></div>
+                <div id="pushboard-to-do" class="pushboard"></div>
             </div>
             <div class="dashboard-section">
                 <h3>IN PROGRESS</h3>
-                <div class="pushboard"></div>
+                <div id="pushboard-in-progress" class="pushboard"></div>
             </div>
             <div class="dashboard-section">
                 <h3>TESTING</h3>
-                <div class="pushboard"></div>
+                <div id="pushboard-testing" class="pushboard"></div>
             </div>
             <div class="dashboard-section">
                 <h3>DONE</h3>
-                <div class="pushboard"></div>
+                <div id="pushboard-done" class="pushboard"></div>
             </div>
         </div>
 
