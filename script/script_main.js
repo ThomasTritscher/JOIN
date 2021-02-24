@@ -116,7 +116,7 @@ function generateBacklogCardTemplate(taskPosition) {
 
 // This function generate board tasks
 
-function showBoardTasks() {
+async function showBoardTasks() {
 
     await init();
     let pushboardToDo = document.getElementById('pushboard-to-do');
