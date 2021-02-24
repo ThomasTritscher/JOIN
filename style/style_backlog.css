@@ -65,6 +65,14 @@
     background-color: #FFA000;
 }
 
+.color-pink {
+    background-color: #f80cd1;
+}
+
+.color-green {
+    background-color: #4cbd0a;
+}
+
 .card-table-container {
     display: flex;
     justify-content: center;
@@ -75,7 +83,7 @@
 
 .card {
     width: 95%;
-    background-color: blue;
+    background-color: #f4f3fb;
     height: 56px;
     border-radius: 4px;
 }

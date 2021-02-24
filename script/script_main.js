@@ -4,6 +4,7 @@ let taskDate;
 let taskCategory;
 let taskUrgency;
 let taskDescription;
+let categoryColor;
 let titleInput = document.getElementById('title-input');
 let dateInput = document.getElementById('date-input');
 let categoryInput = document.getElementById('category-input');
@@ -58,7 +59,14 @@ function getDate() {
  * This function gets the category from the input and saves it in taskCategory.
  */
 function getCategory() {
-    taskCategory = categoryInput.value; 
+    taskCategory = categoryInput.value;
+    if(categoryInput = 'Marketing') {
+        categoryColor = orange;
+    } else if(categoryInput = 'Product') {
+        categoryColor = pink;
+    } else if(categoryInput = 'Sale') {
+        categoryColor = green;
+    }
 }
 
 /**
@@ -88,4 +96,19 @@ function addTask() {
     newTask = {'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'urgency': taskUrgency, 'description': taskDescription};
     tasks.push(newTask);
     backend.setItem('tasks', JSON.stringify(tasks));
+}
+
+async function showBacklogTasks() {
+    await init();
+    let backlogScreen = document.getElementById('backlogScreen');
+    backlogScreen.innerHTML = '';
+    for (let i = 0; i < tasks.length; i++) {
+        backlogScreen.innerHTML += generateBacklogCardTemplate(i);
+    }
+}
+
+function generateBacklogCardTemplate(taskPosition) {
+    return `<div class="card"><div class="card-table-container"><div class="line-category color-${categoryColor}"></div>
+            <div class="first-div-backlog">Name<br> Email</div><div class="second-div-backlog">${tasks[taskPosition].category}</div>
+            <div class="third-div-backlog">${tasks[taskPosition].description}</div></div></div>`
 }

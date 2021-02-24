@@ -10,10 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="../style/style_main.css" type="text/css">
     <link rel="stylesheet" href="../style/style_backlog.css" type="text/css">
+    <script src="../backend/mini_backend.js"></script>
     <title>JOIN</title>
 </head>
 
-<body>
+<body onload="init(), showBacklogTasks()">
 
     <div class="menu-container">
 
@@ -66,26 +67,10 @@
 
         <div class="backlog-screen" id="backlogScreen">
 
-            <div class="card">
-
-
-                <div class="card-table-container">
-
-                    <div class="line-category color-orange"></div>
-
-                    <div class="first-div-backlog">Name<br> Email</div>
-                    <div class="second-div-backlog">Category</div>
-                    <div class="third-div-backlog">Details</div>
-
-
-                </div>
-            </div>
-
         </div>
 
     </div>
 
-    <script src="../backend/mini_backend.js"></script>
     <script src="../script/script_main.js"></script>
 
 </body>
