@@ -122,7 +122,7 @@ async function showBoardTasks() {
     let pushboardToDo = document.getElementById('pushboard-to-do');
     pushboardToDo.innerHTML = '';
     for (let i = 0; i < tasks.length; i++) {
-        pushboardToDo.innerHTML += generateBoardToDo();
+        pushboardToDo.innerHTML += generateBoardToDo(i);
     }
 }
 
