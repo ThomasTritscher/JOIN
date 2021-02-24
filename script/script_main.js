@@ -81,5 +81,7 @@ function cancelTask() {
 }
 
 function addTask() {
-    alert('Save task to server');
+    newTask = {'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'urgency': taskUrgency, 'description': taskDescription};
+    tasks.push(newTask);
+    backend.setItem('tasks', JSON.stringify(users));
 }
