@@ -127,5 +127,5 @@ async function showBoardTasks() {
 }
 
 function generateBoardToDo(taskPosition) {
-    return `<div>${tasks[taskPosition].taskTitle}</div>`
+    pushboardToDo.innerHTML = `<div>Hello ${tasks[taskPosition].category}</div>`
 }
