@@ -60,12 +60,12 @@ function getDate() {
  */
 function getCategory() {
     taskCategory = categoryInput.value;
-    if(categoryInput = 'Marketing') {
-        categoryColor = orange;
-    } else if(categoryInput = 'Product') {
-        categoryColor = pink;
-    } else if(categoryInput = 'Sale') {
-        categoryColor = green;
+    if(taskCategory == 'Marketing') {
+        categoryColor = 'orange';
+    } else if(taskCategory == 'Product') {
+        categoryColor = 'pink';
+    } else if(taskCategory == 'Sale') {
+        categoryColor = 'green';
     }
 }
 
@@ -87,13 +87,14 @@ function cancelTask() {
     alert('Clear input fields!');
 }
 
-function addTask() {
+async function addTask() {
+    await init();
     getTitle();
     getDate();
     getCategory();
     getUrgency();
     getDescription();
-    newTask = {'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'urgency': taskUrgency, 'description': taskDescription};
+    newTask = {'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'color': categoryColor, 'urgency': taskUrgency, 'description': taskDescription};
     tasks.push(newTask);
     backend.setItem('tasks', JSON.stringify(tasks));
 }
@@ -108,7 +109,7 @@ async function showBacklogTasks() {
 }
 
 function generateBacklogCardTemplate(taskPosition) {
-    return `<div class="card"><div class="card-table-container"><div class="line-category color-${categoryColor}"></div>
+    return `<div class="card"><div class="card-table-container"><div class="line-category color-${tasks[taskPosition].color}"></div>
             <div class="first-div-backlog">Name<br> Email</div><div class="second-div-backlog">${tasks[taskPosition].category}</div>
             <div class="third-div-backlog">${tasks[taskPosition].description}</div></div></div>`
 }

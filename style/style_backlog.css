@@ -19,6 +19,10 @@
     text-transform: uppercase;
 }
 
+.first-div-backlog-headline {
+    width: 30%;
+}
+
 .first-div-backlog {
     width: 30%;
     padding-left: 8px;
@@ -39,7 +43,7 @@
 }
 
 .category-header {
-    padding-left: 12px;
+    padding-left: 20px;
 }
 
 .card-custom {
@@ -86,11 +90,13 @@
     background-color: #f4f3fb;
     height: 56px;
     border-radius: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 .backlog-screen {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
