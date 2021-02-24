@@ -126,6 +126,6 @@ async function showBoardTasks() {
     }
 }
 
-function generateBoardToDo(taskPosition) {
-    return`<div>Hello</div>`
+function generateBoardToDo() {
+    return`hallo`
 }
