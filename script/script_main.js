@@ -181,8 +181,7 @@ function cancelTask() {
     descriptionInput.value = '';
 }
 
-async function addTask() {
-    await init();
+function addTask() {
     getTitle();
     getDate();
     getCategory();
