@@ -29,6 +29,7 @@ let regOffice = document.getElementById('regOffice');
 let regPassword1 = document.getElementById('regPassword1');
 let regPassword2 = document.getElementById('regPassword2');
 let regAgbAccept = document.getElementById('regAgbAccept');
+let passwordError = false;
 
 setURL('http://server-58.developerakademie.com/JOIN/backend');
 
@@ -58,6 +59,7 @@ function navItemEnd(lineNumber) {
 async function init() {
     await downloadFromServer();
     tasks = JSON.parse(backend.getItem('tasks')) || [];
+    users = JSON.parse(backend.getItem('users')) || [];
 }
 
 function getName() {
@@ -96,6 +98,36 @@ function getAgbAccept() {
     userAbgAccept = regAgbAccept.value;
 }
 
+function checkPassword() {
+    if(userPassword1 != userPassword2) {
+        passwordError = true;
+    }
+}
+
+async function addUser() {
+    await init();
+    getUserInput();
+    checkPassword();
+    if(passwordError == false) {
+        newUser = {'name': userName, 'email': userEmail, 'phoneNumber': userPhoneNumber, 'department': userDepartment, 'position': userPosition, 'office': userOffice, 'password': userPassword1};
+        users.push(newUser);
+        backend.setItem('users', JSON.stringify(users));
+    } else {
+        alert(`Passwords don't match`);
+    }
+}
+
+function getUserInput() {
+    getName();
+    getEmail();
+    getPhoneNumber();
+    getDepartment();
+    getPosition();
+    getOffice();
+    getPassword1();
+    getPassword2();
+    getAgbAccept();
+}
 
 /**
  * This function gets the title from the input and saves it in taskTitle.
