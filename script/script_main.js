@@ -1,4 +1,5 @@
 let tasks = [];
+let users = [];
 let taskTitle;
 let taskDate;
 let taskCategory;
@@ -84,7 +85,11 @@ function getDescription() {
 }
 
 function cancelTask() {
-    alert('Clear input fields!');
+    titleInput.value = '';
+    dateInput.value = '';
+    categoryInput.value = '';
+    urgencyInput.value = '';
+    descriptionInput.value = '';
 }
 
 async function addTask() {
