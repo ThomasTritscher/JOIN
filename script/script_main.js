@@ -6,11 +6,29 @@ let taskCategory;
 let taskUrgency;
 let taskDescription;
 let categoryColor;
+let userName;
+let userEmail;
+let userPhoneNumber;
+let userDepartment;
+let userPosition;
+let userOffice;
+let userPassword1;
+let userPassword2;
+let userAbgAccept;
 let titleInput = document.getElementById('title-input');
 let dateInput = document.getElementById('date-input');
 let categoryInput = document.getElementById('category-input');
 let urgencyInput = document.getElementById('urgency-input');
 let descriptionInput = document.getElementById('description-input');
+let regName = document.getElementById('regName');
+let regEmail = document.getElementById('regEmail');
+let regPhoneNumber = document.getElementById('regPhoneNumber');
+let regDepartment = document.getElementById('regDepartment');
+let regPosition = document.getElementById('regPosition');
+let regOffice = document.getElementById('regOffice');
+let regPassword1 = document.getElementById('regPassword1');
+let regPassword2 = document.getElementById('regPassword2');
+let regAgbAccept = document.getElementById('regAgbAccept');
 
 setURL('http://server-58.developerakademie.com/JOIN/backend');
 
@@ -41,6 +59,43 @@ async function init() {
     await downloadFromServer();
     tasks = JSON.parse(backend.getItem('tasks')) || [];
 }
+
+function getName() {
+    userName = regName.value;
+}
+
+function getEmail() {
+    userEmail = regEmail.value;
+}
+
+function getPhoneNumber() {
+    userPhoneNumber = regPhoneNumber.value;
+}
+
+function getDepartment() {
+    userDepartment = regDepartment.value;
+}
+
+function getPosition() {
+    userPosition = regPosition.value;
+}
+
+function getOffice() {
+    userOffice = regOffice.value;
+}
+
+function getPassword1() {
+    userPassword1 = regPassword1.value;
+}
+
+function getPassword2() {
+    userPassword2 = regPassword2.value;
+}
+
+function getAgbAccept() {
+    userAbgAccept = regAgbAccept.value;
+}
+
 
 /**
  * This function gets the title from the input and saves it in taskTitle.
@@ -134,3 +189,4 @@ async function showBoardTasks() {
 function generateBoardToDo() {
     return `hallo`
 }
+
