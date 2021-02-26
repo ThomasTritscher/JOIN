@@ -112,8 +112,9 @@ async function addUser() {
         newUser = {'name': userName, 'email': userEmail, 'phoneNumber': userPhoneNumber, 'department': userDepartment, 'position': userPosition, 'office': userOffice, 'password': userPassword1};
         users.push(newUser);
         backend.setItem('users', JSON.stringify(users));
+        alert('Profile created successfully!')
     } else {
-        alert(`Passwords don't match`);
+        alert(`Passwords don't match!`);
     }
 }
 
