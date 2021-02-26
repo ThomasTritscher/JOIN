@@ -127,5 +127,5 @@ async function showBoardTasks() {
 }
 
 function generateBoardToDo() {
-    return`hallo`
+    return `hallo`
 }
