@@ -1,3 +1,5 @@
+let currentUser;
+
 setURL('http://server-58.developerakademie.com/JOIN/backend');
 
 
@@ -30,6 +32,8 @@ async function login(i) {
     for (let i = 0; i < users.length; i++) {
         if (username.value == users[i]['name'] && (password.value) == users[i]['password']) {
             loginSuccessful = true;
+            currentUser = users[i]['name'];
+            localStorage.setItem('currentUser', currentUser);
         }
     }
     if (loginSuccessful) { 
