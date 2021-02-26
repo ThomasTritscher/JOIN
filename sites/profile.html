@@ -9,11 +9,12 @@
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="../style/style_main.css" type="text/css">
-    <link rel="stylesheet" href="../style/style_help.css" type="text/css">
+    <link rel="stylesheet" href="../style/style_profile.css" type="text/css">
+    <script src="../backend/mini_backend.js"></script>
     <title>JOIN</title>
 </head>
 
-<body>
+<body onload="showProfile()">
 
     <div class="menu-container">
 
@@ -40,7 +41,7 @@
                 </li>
             </ul>
 
-            <img class="user-img-sidebar" src="../img/icons/user-img.png">
+            <a href="./profile.html"><img class="user-img-sidebar" src="../img/icons/user-img.png"></a>
 
         </nav>
 
@@ -56,15 +57,15 @@
 
         </div>
 
-        <div class="card-add-task">
+        <div class="input-field" id="profile">
 
             
         </div>
 
     </div>
 
-    <script src="../backend/mini_backend.js"></script>
     <script src="../script/script_main.js"></script>
+    <script src="../script/script_profile.js"></script>
 
 </body>
 

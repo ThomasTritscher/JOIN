@@ -1,0 +1,39 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    margin-left: 150px;
+}
+
+.headline{
+    margin-left: 40px;
+    margin-top: 22px;
+}
+
+.headline h2 {
+    font-weight: bold;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgb(244, 243, 251);
+    padding: 24px;
+    width: 952px;
+    margin-left: 40px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.profileItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+}
