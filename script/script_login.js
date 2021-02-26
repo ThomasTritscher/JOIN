@@ -1,17 +1,4 @@
-let user = [{
-    'name': 'Toby',
-    'password': 'Tobynator', 
-},{
-    'name': 'Desi',
-    'password': 'Hello', 
-},{
-    'name': 'Mohsan',
-    'password': 'World', 
-},{
-    'name': 'Gast',
-    'password': 'Gast123!', 
-},
-];
+setURL('http://server-58.developerakademie.com/JOIN/backend');
 
 
 
@@ -37,10 +24,11 @@ function navItemEnd(lineNumber) {
 /**
  * This function compares the username with the password from the Json Array
  */
-function login(i) {
+async function login(i) {
+    await init();
     let loginSuccessful = false;
-    for (let i = 0; i < user.length; i++) {
-        if (username.value == user[i]['name'] && (password.value) == user[i]['password']) {
+    for (let i = 0; i < users.length; i++) {
+        if (username.value == users[i]['name'] && (password.value) == users[i]['password']) {
             loginSuccessful = true;
         }
     }
