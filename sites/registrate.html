@@ -14,7 +14,7 @@
 <script src="../backend/mini_backend.js"></script>
 <title>JOIN</title>
 </head>
-<body>
+<body onload="init()">
     <div class="menu-container">
 
         <div class="logo">
@@ -28,14 +28,14 @@
       <span>Create an account to use JOIN</span>
       <br>
       <br>
-        <form>
+        <form action="#" onsubmit="addUser(); return false">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Name</label>
-              <input placeholder="Your Name..." class="form-control" id="regName" aria-describedby="emailHelp">
+              <input placeholder="Your Name..." type="text" class="form-control" id="regName" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">E-mail</label>
-              <input placeholder="E-mail..." class="form-control" id="regEmail">
+              <input placeholder="E-mail..." type="email" class="form-control" id="regEmail">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Phone Number</label>

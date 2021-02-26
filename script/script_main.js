@@ -58,8 +58,10 @@ function navItemEnd(lineNumber) {
  */
 async function init() {
     await downloadFromServer();
-    tasks = JSON.parse(backend.getItem('tasks')) || [];
     users = JSON.parse(backend.getItem('users')) || [];
+    if(users.length > 0) {
+        tasks = JSON.parse(backend.getItem('tasks')) || [];
+    }
 }
 
 function getName() {
@@ -104,8 +106,7 @@ function checkPassword() {
     }
 }
 
-async function addUser() {
-    await init();
+function addUser() {
     getUserInput();
     checkPassword();
     if(passwordError == false) {
