@@ -247,7 +247,7 @@ async function showBoardTaskInProgress() {
 }
 
 function generateBoardInProgress(taskPosition) {
-    return `<div id="task-to-do" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="task-to-do" class="container-board d-none" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="./../img/icons/trash.png"></div>
@@ -273,7 +273,7 @@ async function showBoardTaskTesting() {
     }
 }
 function generateBoardTesting(taskPosition) {
-    return `<div id="task-to-do" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="task-to-do" class="container-board d-none" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="./../img/icons/trash.png"></div>
@@ -299,7 +299,7 @@ async function showBoardTaskDone() {
     }
 }
 function generateBoardDone(taskPosition) {
-    return `<div id="task-to-do" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="task-to-do" class="container-board d-none" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="./../img/icons/trash.png"></div>
@@ -349,7 +349,7 @@ async function goToDone() {
 
 async function goBackInProgress() {
     await init();
-    document.getElementById('pushboard-done').classList.remove('d-none');
+    document.getElementById('pushboard-in-progress').classList.remove('d-none');
     document.getElementById('pushboard-testing').classList.add('d-none');
 }
 
