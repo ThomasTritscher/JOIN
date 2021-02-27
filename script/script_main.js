@@ -229,9 +229,9 @@ function generateBoardToDo(taskPosition) {
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
-        <div><img class="img-board cursorpointer" onclick="previousTask()" src="img/icons/previous.png"></div>
-        <div><img class="img-board cursorpointer" onclick="nextTask()" src="img/icons/next.png"></div>
-        <div><img class="img-board" src="img/icons/junge.png"></div>
+        <div><img class="img-board cursorpointer" onclick="previousTask()" src="./../img/icons/previous.png"></div>
+        <div><img class="img-board cursorpointer" onclick="nextTask()" src="./../img/icons/next.png"></div>
+        <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>;
 `
