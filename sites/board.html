@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style_board.css">
+    <link rel="stylesheet" href="../style/style_main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"rel="stylesheet">
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>JOIN</title>
 </head>
 
-<body>
+<body onload="showBoardTasks()">
 
     <div class="menu-container">
 
@@ -27,7 +28,7 @@
 
             <ul>
                 <li onmouseover="navItemMove(1)" onmouseout="navItemEnd(1)">
-                    <div id="lineNav1" class="line-navigation"></div><a href="#">Board</a>
+                    <div id="lineNav1" class="line-navigation"></div><a href="./board.html">Board</a>
                 </li>
                 <li onmouseover="navItemMove(2)" onmouseout="navItemEnd(2)">
                     <div id="lineNav2" class="line-navigation"></div><a href="./backlog.html">Backlog</a>
@@ -45,28 +46,35 @@
     </div>
 
     <div class="main-content">
-        <div class="dashboard-section">
-            <h3>TO-DO</h3>
-            <div class="pushboard"></div>
-        </div>
-        <div class="dashboard-section">
-            <h3>IN PROGRESS</h3>
-            <div class="pushboard"></div>
-        </div>
-        <div class="dashboard-section">
-            <h3>TESTING</h3>
-            <div class="pushboard"></div>
-        </div>
-        <div class="dashboard-section">
-            <h3>DONE</h3>
-            <div class="pushboard"></div>
-        </div>
+        <div class="headline">
 
+            <h2>Board</h2>
+
+            <span class="small-text color-blue">Learning Management System Project</span>
+
+        </div>
+        <div class="dashboard-container">
+            <div class="dashboard-section">
+                <h3>TO-DO</h3>
+                <div id="pushboard-to-do" class="pushboard"></div>
+            </div>
+            <div class="dashboard-section">
+                <h3>IN PROGRESS</h3>
+                <div id="pushboard-in-progress" class="pushboard"></div>
+            </div>
+            <div class="dashboard-section">
+                <h3>TESTING</h3>
+                <div id="pushboard-testing" class="pushboard"></div>
+            </div>
+            <div class="dashboard-section">
+                <h3>DONE</h3>
+                <div id="pushboard-done" class="pushboard"></div>
+            </div>
+        </div>
 
     </div>
 
     <script src="../backend/mini_backend.js"></script>
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="../script/script_main.js"></script>
 </body>
 
