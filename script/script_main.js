@@ -223,7 +223,7 @@ function generateBoardToDo(taskPosition) {
     return `<div id="task-to-do" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
