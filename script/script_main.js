@@ -106,7 +106,7 @@ async function showBacklogTasks() {
     for (let i = 0; i < tasks.length; i++) {
         backlogScreen.innerHTML += generateBacklogCardTemplate(i);
     }
-}
+} 
 
 function generateBacklogCardTemplate(taskPosition) {
     return `<div class="card"><div class="card-table-container"><div class="line-category color-${tasks[taskPosition].color}"></div>
