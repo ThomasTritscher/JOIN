@@ -219,7 +219,21 @@ async function showBoardTasks() {
     }
 }
 
-function generateBoardToDo() {
-    return `hallo`
+function generateBoardToDo(taskPosition) {
+    return `<div id="task-to-do" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    <div class="d-flex date-img-container">
+    <div class="blue board-bold">${tasks[taskPosition].title}</div>
+    <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="img/icons/trash.png"></div>
+</div>
+    <div>${tasks[taskPosition].category}</div>
+    <div>${tasks[taskPosition].urgency}</div>
+    <div class="date-img-container d-flex">
+        <div class="date-board">${tasks[taskPosition].date}</div>
+        <div><img class="img-board cursorpointer" onclick="previousTask()" src="img/icons/previous.png"></div>
+        <div><img class="img-board cursorpointer" onclick="nextTask()" src="img/icons/next.png"></div>
+        <div><img class="img-board" src="img/icons/junge.png"></div>
+    </div>
+</div>;
+`
 }
 
