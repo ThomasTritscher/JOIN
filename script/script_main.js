@@ -233,7 +233,7 @@ function generateBoardToDo(taskPosition) {
         <div><img class="img-board cursorpointer" onclick="nextTask()" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
-</div>;
+</div>
 `
 }
 
