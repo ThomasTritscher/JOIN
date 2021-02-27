@@ -229,8 +229,8 @@ function generateBoardToDo(taskPosition) {
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
-        <div><img class="img-board cursorpointer" onclick="previousTask()" src="./../img/icons/previous.png"></div>
-        <div><img class="img-board cursorpointer" onclick="nextTask()" src="./../img/icons/next.png"></div>
+        
+        <div><img class="img-board cursorpointer" onclick="goToInProgress()" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>
@@ -256,8 +256,8 @@ function generateBoardInProgress(taskPosition) {
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
-        <div><img class="img-board cursorpointer" onclick="previousTask()" src="./../img/icons/previous.png"></div>
-        <div><img class="img-board cursorpointer" onclick="nextTask()" src="./../img/icons/next.png"></div>
+        <div><img class="img-board cursorpointer" onclick="goBackToDo()" src="./../img/icons/previous.png"></div>
+        <div><img class="img-board cursorpointer" onclick="goToTesting()" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>
@@ -282,8 +282,8 @@ function generateBoardTesting(taskPosition) {
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
-        <div><img class="img-board cursorpointer" onclick="previousTask()" src="./../img/icons/previous.png"></div>
-        <div><img class="img-board cursorpointer" onclick="nextTask()" src="./../img/icons/next.png"></div>
+        <div><img class="img-board cursorpointer" onclick="goBackInProgress()" src="./../img/icons/previous.png"></div>
+        <div><img class="img-board cursorpointer" onclick="goToDone()" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>
@@ -308,8 +308,7 @@ function generateBoardDone(taskPosition) {
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
-        <div><img class="img-board cursorpointer" onclick="previousTask()" src="./../img/icons/previous.png"></div>
-        <div><img class="img-board cursorpointer" onclick="nextTask()" src="./../img/icons/next.png"></div>
+        <div><img class="img-board cursorpointer" onclick="goBackToTesting()" src="./../img/icons/previous.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>
@@ -324,5 +323,38 @@ async function showBoardTasks() {
     showBoardTaskDone();
 }
 
+async function goToInProgress() {
+    await init();
+    document.getElementById('pushboard-to-do').classList.add('d-none');
+    document.getElementById('pushboard-in-progress').classList.remove('d-none');
+}
 
+async function goBackToDo() {
+    await init();
+    document.getElementById('pushboard-to-do').classList.remove('d-none');
+    document.getElementById('pushboard-in-progress').classList.add('d-none');
+}
 
+async function goToTesting() {
+    await init();
+    document.getElementById('pushboard-testing').classList.remove('d-none');
+    document.getElementById('pushboard-in-progress').classList.add('d-none');
+}
+
+async function goToDone() {
+    await init();
+    document.getElementById('pushboard-done').classList.remove('d-none');
+    document.getElementById('pushboard-testing').classList.add('d-none');
+}
+
+async function goBackInProgress() {
+    await init();
+    document.getElementById('pushboard-done').classList.remove('d-none');
+    document.getElementById('pushboard-testing').classList.add('d-none');
+}
+
+async function goBackToTesting() {
+    await init();
+    document.getElementById('pushboard-done').classList.add('d-none');
+    document.getElementById('pushboard-testing').classList.remove('d-none');
+}
