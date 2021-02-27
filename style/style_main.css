@@ -31,8 +31,10 @@ body {
 
 .menu-navigation {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    height: 75%;
 }
 
 .menu-navigation ul {
@@ -95,3 +97,8 @@ h2 {
     color: #1e3190;
 }
 
+.user-img-sidebar {
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+}
