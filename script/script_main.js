@@ -349,7 +349,7 @@ async function goToDone() {
 
 async function goBackInProgress() {
     await init();
-    document.getElementById('taskInProgress').classList.remove('d-none1');
+    document.getElementById('pushboard-in-progress').classList.remove('d-none1');
     document.getElementById('pushboard-testing').classList.add('d-none1');
 }
 
