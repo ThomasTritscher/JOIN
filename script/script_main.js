@@ -325,36 +325,36 @@ async function showBoardTasks() {
 
 async function goToInProgress() {
     await init();
-    document.getElementById('pushboard-to-do').classList.add('d-none');
-    document.getElementById('pushboard-in-progress').classList.remove('d-none');
+    document.getElementById('pushboard-to-do').classList.add('d-none1');
+    document.getElementById('pushboard-in-progress').classList.remove('d-none1');
 }
 
 async function goBackToDo() {
     await init();
-    document.getElementById('pushboard-to-do').classList.remove('d-none');
-    document.getElementById('pushboard-in-progress').classList.add('d-none');
+    document.getElementById('pushboard-to-do').classList.remove('d-none1');
+    document.getElementById('pushboard-in-progress').classList.add('d-none1');
 }
 
 async function goToTesting() {
     await init();
-    document.getElementById('pushboard-testing').classList.remove('d-none');
-    document.getElementById('pushboard-in-progress').classList.add('d-none');
+    document.getElementById('pushboard-testing').classList.remove('d-none1');
+    document.getElementById('pushboard-in-progress').classList.add('d-none1');
 }
 
 async function goToDone() {
     await init();
-    document.getElementById('pushboard-done').classList.remove('d-none');
+    document.getElementById('pushboard-done').classList.remove('d-none1');
     document.getElementById('pushboard-testing').classList.add('d-none');
 }
 
 async function goBackInProgress() {
     await init();
-    document.getElementById('taskInProgress').classList.remove('d-none');
-    document.getElementById('pushboard-testing').classList.add('d-none');
+    document.getElementById('taskInProgress').classList.remove('d-none1');
+    document.getElementById('pushboard-testing').classList.add('d-none1');
 }
 
 async function goBackToTesting() {
     await init();
-    document.getElementById('pushboard-done').classList.add('d-none');
-    document.getElementById('pushboard-testing').classList.remove('d-none');
+    document.getElementById('pushboard-done').classList.add('d-none1');
+    document.getElementById('pushboard-testing').classList.remove('d-none1');
 }
