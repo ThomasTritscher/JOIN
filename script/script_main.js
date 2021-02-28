@@ -220,7 +220,7 @@ async function showBoardTaskToDo() {
 }
 
 function generateBoardToDo(taskPosition) {
-    return `<div id="taskToDo" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="pushboard-to-do" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="./../img/icons/trash.png"></div>
@@ -247,7 +247,7 @@ async function showBoardTaskInProgress() {
 }
 
 function generateBoardInProgress(taskPosition) {
-    return `<div id="taskInProgress" class="container-board d-none" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="pushboard-in-progress" class="container-board d-none" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="./../img/icons/trash.png"></div>
@@ -273,7 +273,7 @@ async function showBoardTaskTesting() {
     }
 }
 function generateBoardTesting(taskPosition) {
-    return `<div  id="taskTesting" class="container-board d-none" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div  id="pushboard-testing" class="container-board d-none" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="./../img/icons/trash.png"></div>
@@ -299,7 +299,7 @@ async function showBoardTaskDone() {
     }
 }
 function generateBoardDone(taskPosition) {
-    return `<div id="taskDone" class="container-board d-none" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="pushboard-done" class="container-board d-none" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="./../img/icons/trash.png"></div>
@@ -325,36 +325,36 @@ async function showBoardTasks() {
 
 async function goToInProgress() {
     await init();
-    document.getElementById('taskToDo').classList.add('d-none');
-    document.getElementById('taskInProgress').classList.remove('d-none');
+    document.getElementById('pushboard-to-do').classList.add('d-none');
+    document.getElementById('pushboard-in-progress').classList.remove('d-none');
 }
 
 async function goBackToDo() {
     await init();
-    document.getElementById('taskToDo').classList.remove('d-none');
-    document.getElementById('taskInProgress').classList.add('d-none');
+    document.getElementById('pushboard-to-do').classList.remove('d-none');
+    document.getElementById('pushboard-in-progress').classList.add('d-none');
 }
 
 async function goToTesting() {
     await init();
-    document.getElementById('taskTesting').classList.remove('d-none');
-    document.getElementById('taskInProgress').classList.add('d-none');
+    document.getElementById('pushboard-testing').classList.remove('d-none');
+    document.getElementById('pushboard-in-progress').classList.add('d-none');
 }
 
 async function goToDone() {
     await init();
-    document.getElementById('taskDone').classList.remove('d-none');
-    document.getElementById('taskTesting').classList.add('d-none');
+    document.getElementById('pushboard-done').classList.remove('d-none');
+    document.getElementById('pushboard-testing').classList.add('d-none');
 }
 
 async function goBackInProgress() {
     await init();
     document.getElementById('taskInProgress').classList.remove('d-none');
-    document.getElementById('taskTesting').classList.add('d-none');
+    document.getElementById('pushboard-testing').classList.add('d-none');
 }
 
 async function goBackToTesting() {
     await init();
-    document.getElementById('taskDone').classList.add('d-none');
-    document.getElementById('taskTesting').classList.remove('d-none');
+    document.getElementById('pushboard-done').classList.add('d-none');
+    document.getElementById('pushboard-testing').classList.remove('d-none');
 }
