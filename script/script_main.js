@@ -317,10 +317,10 @@ function generateBoardDone(taskPosition) {
 
 async function showBoardTasks() {
     await init();
-    showBoardTaskToDo(i);
-    showBoardTaskInProgress(i);
-    showBoardTaskTesting(i);
-    showBoardTaskDone(i);
+    showBoardTaskToDo();
+    showBoardTaskInProgress();
+    showBoardTaskTesting();
+    showBoardTaskDone();
 }
 
 async function goToInProgress() {
