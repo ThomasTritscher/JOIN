@@ -344,7 +344,7 @@ async function goToTesting() {
 async function goToDone() {
     await init();
     document.getElementById('pushboard-done').classList.remove('d-none1');
-    document.getElementById('pushboard-testing').classList.add('d-none');
+    document.getElementById('pushboard-testing').classList.add('d-none1');
 }
 
 async function goBackInProgress() {
