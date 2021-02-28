@@ -15,6 +15,7 @@
 
 .headline h2 {
     font-weight: bold;
+<<<<<<< HEAD
 }
 
 .input-field {
@@ -31,6 +32,15 @@
 }
 
 .input-field {
+=======
+    font-size: 36px;
+    color: rgb(10 10 57);
+    
+    
+}
+
+.input-field {
+>>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
     background-color: #e9edf1;
     width: 1050px;
     margin-left: 30px;
@@ -58,7 +68,10 @@
 }
 
 .input{
+<<<<<<< HEAD
     width: 415px;
+=======
+>>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
     width:450px;
     height: 45px;
     padding: 5px;
@@ -72,6 +85,7 @@
     appearance: none;
     
     
+<<<<<<< HEAD
 }
 
 
@@ -83,12 +97,28 @@
 }
 
 
+=======
+}
+
+
+.datefield input {
+    background: url(../img/icons/icons8-calendar-150.png)95.5% 50% no-repeat;
+    background-size: 30px 20px;
+    appearance: none;
+    background-color: white;
+}
+
+
+>>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
 
 .selectfield select{
     width: 450px;
     height: 45px;
     padding: 5px;
+<<<<<<< HEAD
     font-size: 30px;
+=======
+>>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
     font-size: 20px;
     color: #4a5e72;
     appearance: none;
@@ -135,7 +165,10 @@
 
 
 .assigned-div {
+<<<<<<< HEAD
     width: 410px;
+=======
+>>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
     width: 450px;
 }
 
