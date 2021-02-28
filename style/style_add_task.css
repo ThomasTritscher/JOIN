@@ -10,15 +10,11 @@
 .headline{
     margin-left: 40px;
     margin-top: 22px;
-<<<<<<< HEAD
-=======
     margin-bottom: 25px;
->>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
 }
 
 .headline h2 {
     font-weight: bold;
-<<<<<<< HEAD
 }
 
 .input-field {
@@ -28,7 +24,6 @@
     border-radius: 5px;
     padding-bottom: 20px;
     padding-top: 20px;
-=======
     font-size: 36px;
     color: rgb(10 10 57);
     
@@ -43,7 +38,6 @@
     padding-bottom: 25px;
     box-shadow: 15px 15px 70px 13px darkslategrey;
     padding-top: 10px;
->>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
 }
 
 .title-input-field{
@@ -64,11 +58,8 @@
 }
 
 .input{
-<<<<<<< HEAD
     width: 415px;
-=======
     width:450px;
->>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
     height: 45px;
     padding: 5px;
     border-radius: 8px;
@@ -97,9 +88,7 @@
     width: 450px;
     height: 45px;
     padding: 5px;
-<<<<<<< HEAD
     font-size: 30px;
-=======
     font-size: 20px;
     color: #4a5e72;
     appearance: none;
@@ -112,7 +101,6 @@
     outline: none;
     font-family: 'Poppins', sans-serif;
     
->>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
 }
 
 .selectfield select option{
@@ -147,11 +135,8 @@
 
 
 .assigned-div {
-<<<<<<< HEAD
     width: 410px;
-=======
     width: 450px;
->>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
 }
 
 .button-box{
