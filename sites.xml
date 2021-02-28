@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FileZilla3 version="3.51.0" platform="mac">
+	<Servers>
+		<Server>
+			<Host>server-58.developerakademie.com</Host>
+			<Port>80</Port>
+			<Protocol>2</Protocol>
+			<User>f013ad96</User>
+			<Pass encoding="base64">RHdKVVVvbVQzdHNVZzI1Yw==</Pass>
+			<Logontype>1</Logontype>
+			<BypassProxy>0</BypassProxy>
+			<Name>server-58.developerakademie.com</Name>
+			<RemoteDir>1 0</RemoteDir>
+			<SyncBrowsing>0</SyncBrowsing>
+			<DirectoryComparison>0</DirectoryComparison>
+		</Server>
+	</Servers>
+</FileZilla3>

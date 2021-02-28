@@ -43,6 +43,8 @@
                 </li>
             </ul>
 
+            <a href="./profile.html"><img class="user-img-sidebar" src="../img/icons/user-img.png"></a>
+
         </nav>
 
     </div>
@@ -73,7 +75,7 @@
                         <div class="title-name">
                             DUE DATE
                         </div>
-                        <div>
+                        <div class="datefield">
                             <input id="date-input" type="date" value="2017-06-01" class="input"></input>
                         </div>
                     </div>
@@ -85,7 +87,7 @@
                         <div class="title-name">
                             CATEGORY
                         </div>
-                        <div>
+                        <div class="selectfield">
                             <select id="category-input" class="select-input">
                                 <option value="Marketing">Marketing</option>
                                 <option value="Product">Product</option>
@@ -99,7 +101,7 @@
                         <div class="title-name">
                             URGENCY
                         </div>
-                        <div>
+                        <div class="selectfield">
                             <select id="urgency-input" class="select-input">
                                 <option value="High">High</option>
                                 <option value="Medium">Medium</option>
@@ -137,7 +139,7 @@
                         </div>
 
                         <div class="button-box">
-                            <button onclick="cancelTask()" type="button" class="btn btn-primary btn-custom">CANCEL</button>
+                            <button onclick="cancelTask()" type="button" class="btn btn-secondary btn-custom">CANCEL</button>
                             <button type="submit" class="btn btn-primary btn-custom">CREATE TASK</button>
                         </div>
 

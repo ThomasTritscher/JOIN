@@ -10,10 +10,15 @@
 .headline{
     margin-left: 40px;
     margin-top: 22px;
+<<<<<<< HEAD
+=======
+    margin-bottom: 25px;
+>>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
 }
 
 .headline h2 {
     font-weight: bold;
+<<<<<<< HEAD
 }
 
 .input-field {
@@ -23,66 +28,138 @@
     border-radius: 5px;
     padding-bottom: 20px;
     padding-top: 20px;
+=======
+    font-size: 36px;
+    color: rgb(10 10 57);
+    
+    
+}
+
+.input-field {
+    background-color: #e9edf1;
+    width: 1050px;
+    margin-left: 30px;
+    border-radius: 25px;
+    padding-bottom: 25px;
+    box-shadow: 15px 15px 70px 13px darkslategrey;
+    padding-top: 10px;
+>>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
 }
 
 .title-input-field{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
-    padding-bottom: 35px;
-    
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .title-name{
     font-size: 20px;
     font-weight: bolder;
-    color: rgb(55, 55, 129);
-    margin-bottom: 20px;
+    color: rgb(10 10 57);
+    margin-bottom: 10px;
+    padding-left: 5px;
 }
 
 .input{
+<<<<<<< HEAD
     width: 415px;
+=======
+    width:450px;
+>>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
     height: 45px;
     padding: 5px;
-    font-size: 30px
+    border-radius: 8px;
+    padding-left: 1rem;
+    font-size: 20px;
+    color: #4a5e72;
+    border: 1px solid grey;
+    background: white;
+    outline: none;
+    appearance: none;
+    
+    
 }
 
-.select-input{
-    width: 414px;
-    height: 62px;
-    padding: 5px;
-    font-size: 30px;
+
+.datefield input {
+    background: url(../img/icons/icons8-calendar-150.png)95.5% 50% no-repeat;
+    background-size: 30px 20px;
+    appearance: none;
+    background-color: white;
 }
+
+
+
+.selectfield select{
+    width: 450px;
+    height: 45px;
+    padding: 5px;
+<<<<<<< HEAD
+    font-size: 30px;
+=======
+    font-size: 20px;
+    color: #4a5e72;
+    appearance: none;
+    background: url(../img/icons/chevron.png) 95.5% 50% no-repeat;
+    background-color: white;
+    background-size: 30px 20px;
+    padding-left: 1rem;
+    border: 1px solid grey;
+    border-radius: 8px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    
+>>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
+}
+
+.selectfield select option{
+    font-size: 30px;
+    }
+
 
 
 .assigned-title-name{
-    margin-bottom: 64px;
+    margin-bottom: 10px;
 }
 
 .text-input{
-    width: 400px;
-    height: 145px;
+    height: 130px;
     padding: 5px;
-    font-size: 30px
+    width: 410px;
+    font-size: 20px;
+    padding-left: 1rem;
+    border: 1px solid grey;
+    border-radius: 8px;
+    outline: none;
+    color: #4a5e72;
+    
 }
 
 
 .user-img{
     width: 50px;
+    background-color: white;
+    border-radius: 35px;
 }
 
 
 .assigned-div {
+<<<<<<< HEAD
     width: 410px;
+=======
+    width: 450px;
+>>>>>>> 240535ab74210f25255d49672fb5fef8fefb642a
 }
 
 .button-box{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding-top: 30px;
-    margin-left: 108px;
-    margin-top: 100px;
+    padding-top: 54px;
+    margin-left: 28px;;
 }
 
 .btn-custom {
@@ -98,5 +175,5 @@
 }
 
 .input-field textarea {
-    width: 410px;
+    width: 450px;
 }

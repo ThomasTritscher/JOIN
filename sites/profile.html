@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/style_board.css">
-    <link rel="stylesheet" href="../style/style_main.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../style/style_main.css" type="text/css">
+    <link rel="stylesheet" href="../style/style_profile.css" type="text/css">
     <script src="../backend/mini_backend.js"></script>
     <title>JOIN</title>
 </head>
 
-<body onload="showBoardTasks()">
+<body onload="showProfile()">
 
     <div class="menu-container">
 
@@ -49,45 +48,25 @@
     </div>
 
     <div class="main-content">
+
         <div class="headline">
 
-            <h2>Board</h2>
+            <h2>Profile</h2>
 
             <span class="small-text color-blue">Learning Management System Project</span>
 
         </div>
-        <div class="dashboard-container">
-            <div class="dashboard-section">
-                <h3>TO-DO</h3>
-                <div class="pushboard">
-                    <div id="pushboard-to-do"></div>
-                    
-                </div>
-            </div>
-            <div class="dashboard-section">
-                <h3>IN PROGRESS</h3>
-                <div class="pushboard">
-                    <div id="pushboard-in-progress" class="d-none1"></div>
-                    
-                </div>
-            </div>
-            <div class="dashboard-section">
-                <h3>TESTING</h3>
-                <div class="pushboard">
-                    <div id="pushboard-testing" class="d-none1"></div>
-                </div>
-            </div>
-            <div class="dashboard-section">
-                <h3>DONE</h3>
-                <div class="pushboard">
-                    <div id="pushboard-done" class="d-none1"></div>
-                </div>
-            </div>
+
+        <div class="input-field" id="profile">
+
+            
         </div>
 
     </div>
 
     <script src="../script/script_main.js"></script>
+    <script src="../script/script_profile.js"></script>
+
 </body>
 
 </html>
