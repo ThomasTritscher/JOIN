@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style_board.css">
+    <link rel="stylesheet" href="../style/style_main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="../backend/mini_backend.js"></script>
+    <title>JOIN</title>
+    <style>
+        .impressum-container {
+            margin-right: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
 
+        <div class="logo">
+
+            <img src="../img/logo/logo.png" alt="Logo">
+
+        </div>
+
+        <nav class="menu-navigation">
+
+            <ul>
+                <li onmouseover="navItemMove(1)" onmouseout="navItemEnd(1)">
+                    <div id="lineNav1" class="line-navigation"></div><a href="./board.html">Board</a>
+                </li>
+                <li onmouseover="navItemMove(2)" onmouseout="navItemEnd(2)">
+                    <div id="lineNav2" class="line-navigation"></div><a href="./backlog.html">Backlog</a>
+                </li>
+                <li onmouseover="navItemMove(3)" onmouseout="navItemEnd(3)">
+                    <div id="lineNav3" class="line-navigation"></div><a href="./add_task.html">Add Task</a>
+                </li>
+                <li onmouseover="navItemMove(4)" onmouseout="navItemEnd(4)">
+                    <div id="lineNav4" class="line-navigation"></div><a href="./help.html">Help</a>
+                </li>
+            </ul>
+
+            <a href="./profile.html"><img class="user-img-sidebar" src="../img/icons/user-img.png"></a>
+
+        </nav>
+
+    </div>
+    <div class="impressum-container h1">
+        <h1 class="h1_shadow center">Impressum</h1>
+        <hr class="horizontal-line-impressum">
+
+        <h2 class="h2">ANGABEN GEMÄSS § 5 TMG</h2>
+        <p> JOIN Musterfirma GmBH <br>
+            Musterstraße 35, 85247 Musterstadt, Deutschland <br> <br>
+            <b>Wichtig!</b> Du möchtest uns ein Paket schicken? Super, wir bekommen gerne Post.
+            Allerdings sind wir nicht jeden Tag im Büro und bitten deshalb <b>dringend</b> um vorherige 
+            Kontaktaufnahme und eine Tracking-Nummer. So wissen wir, wann wir deine Überraschung 
+            erwarten dürfen oder können die Sendung notfalls umleiten. <br>Vielen lieben Dank für dein Verständnis.
+        </p>
+
+        <h2>VERTRETEN DURCH</h2>
+        <p>Marie Muster <br>Maik Muster <br>USt-IdNr.: DE12334455667788
+        </p>
+
+        <h2 class="h2">KONTAKT</h2>
+        <p>Telefon: +49 123455667778 <br>E-Mail: <a href="mailto:info@join.de">info@join.de</a>
+        </p>
+
+        <h2 class="h2">STREITSCHLICHTUNG</h2>
+        <p>
+            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+            <a href="http://ec.europa.eu/consumers/odr">http://ec.europa.eu/consumers/odr</a>. 
+            Unsere E-Mail-Adresse finden Sie oben im Impressum. <br>
+            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer 
+            Verbraucherschlichtungsstelle teilzunehmen. <br><br><br> Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
+        </p>
+</div>
+
+    <script src="../script/script_main.js"></script>
+</body>
+</html>
