@@ -223,7 +223,7 @@ function generateBoardToDo(taskPosition) {
     return `<div class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="./../img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img onclick="deleteTaskToDo()" height="20px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
@@ -250,7 +250,7 @@ function generateBoardInProgress(taskPosition) {
     return `<div class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="./../img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img onclick="deleteTaskInProgress()" height="20px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
@@ -276,7 +276,7 @@ function generateBoardTesting(taskPosition) {
     return `<div class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="./../img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img onclick="deleteTaskTesting()" height="20px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
@@ -302,7 +302,7 @@ function generateBoardDone(taskPosition) {
     return `<div class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img height="32px" src="./../img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img onclick="deleteTaskDone()" height="20px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
@@ -322,6 +322,7 @@ async function showBoardTasks() {
     showBoardTaskTesting();
     showBoardTaskDone();
 }
+// Move to other board
 
 async function goToInProgress() {
     await init();
@@ -357,4 +358,26 @@ async function goBackToTesting() {
     await init();
     document.getElementById('pushboard-done').classList.add('d-none1');
     document.getElementById('pushboard-testing').classList.remove('d-none1');
+}
+
+// delete task
+
+async function deleteTaskToDo() {
+    await init();
+    document.getElementById('pushboard-to-do').classList.add('d-none1');
+}
+
+async function deleteTaskInProgress() {
+    await init();
+    document.getElementById('pushboard-in-progress').classList.add('d-none1');
+}
+
+async function deleteTaskTesting() {
+    await init();
+    document.getElementById('pushboard-testing').classList.add('d-none1');
+}
+
+async function deleteTaskDone() {
+    await init();
+    document.getElementById('pushboard-done').classList.add('d-none1');
 }
