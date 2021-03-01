@@ -124,18 +124,19 @@
 
 
 .assigned-div {
-    width: 400px;
+    width      : 400px;
     margin-left: 16px;
 }
 
 .button-box {
-    display: flex;
-    flex-direction: row;
+    display        : flex;
+    flex-direction : row;
     justify-content: flex-end;
-    padding-top: 30px;
+    padding-top    : 30px;
 }
+
 .btn-custom {
-    margin-left: 8px;
+    margin-left     : 8px;
     background-color: #1e3190;
 }
 
@@ -150,13 +151,82 @@
     width: 450px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .hide-element-menu {
         display: none;
     }
+
     .main-content {
-        margin: 0;
+        display: flex;
+        flex-direction: column;
+        margin    : 0;
         margin-top: 32px;
     }
+    .input-field {
+        display: flex;
+        flex-direction: column;
+        background-color: #e9edf1;
+        margin-left: 30px;
+        border-radius: 25px;
+        padding-bottom: 25px;
+        padding-top: 10px;
+    }
 
+    .mobile-menu {
+        position        : absolute;
+        display         : flex;
+        top             : 0;
+        left            : 0;
+        right           : 0;
+        width           : 100vw;
+        height          : 3rem;
+        background-color: #1e3190;
+        justify-content : space-between;
+    }
+
+    .mobile-logo {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        padding: 0.25rem;
+        margin-top: 0.25rem;
+    }
+
+    .mobile-nav {
+        margin-right: 48px;
+    }
+
+    .mobile-nav ul {
+        display   : flex;
+        width     : 100%;
+        list-style: none;
+    }
+
+    .mobile-nav li {
+        display      : flex;
+        color        : white;
+        font-size    : 18px;
+        margin-bottom: 8px;
+        margin-top   : 16px;
+        margin-right: 16px;
+    }
+
+    .mobile-nav li a {
+        display        : flex;
+        width          : 100%;
+        text-decoration: none;
+        color          : white;
+    }
+    .user-img-mobile {
+        margin-top: 8px;
+        margin-left: 8px;
+    }
+
+
+}
+
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
 }

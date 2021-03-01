@@ -17,9 +17,28 @@
 </head>
 
 <body>
-
+    <div class="mobile-menu">
+        <img src="../img/logo/logo.png" class="mobile-logo" alt="Logo">
+        <nav class="mobile-nav">
+            <ul>
+                <li onmouseover="navItemMove(1)" onmouseout="navItemEnd(1)">
+                    <div id="lineNav1" class="line-navigation"></div><a href="./board.html">Board</a>
+                </li>
+                <li onmouseover="navItemMove(2)" onmouseout="navItemEnd(2)">
+                    <div id="lineNav2" class="line-navigation"></div><a href="./backlog.html">Backlog</a>
+                </li>
+                <li onmouseover="navItemMove(3)" onmouseout="navItemEnd(3)">
+                    <div id="lineNav3" class="line-navigation"></div><a href="./add_task.html">Add Task</a>
+                </li>
+                <li onmouseover="navItemMove(4)" onmouseout="navItemEnd(4)">
+                    <div id="lineNav4" class="line-navigation"></div><a href="./help.html">Help</a>
+                </li>
+                <a href="./profile.html"><img class="user-img-mobile" src="../img/icons/user-img.png"></a>
+            </ul>
+           
+        </nav>
+    </div>
     <div class="menu-container hide-element-menu">
-
         <div class="logo">
 
             <img src="../img/logo/logo.png" alt="Logo">
@@ -118,9 +137,7 @@
                             DESCRIPTION
                         </div>
                         <div>
-                            <textarea
-                                id="description-input"
-                                placeholder="Write description..."
+                            <textarea id="description-input" placeholder="Write description..."
                                 class="text-input form-control"></textarea>
 
                         </div>
@@ -151,7 +168,9 @@
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
 
     <script src="../script/script_main.js"></script>
 
