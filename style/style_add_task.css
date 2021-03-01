@@ -151,25 +151,85 @@
     width: 450px;
 }
 
+.hide-menu-btn {
+    width       : 1.75rem;
+    height      : 1.75rem;
+    margin      : 0.5rem;
+    margin-right: 1rem;
+    padding     : 0.25rem;
+
+}
+
 @media (max-width: 768px) {
     .hide-element-menu {
         display: none;
     }
 
     .main-content {
-        display: flex;
+        display       : flex;
         flex-direction: column;
-        margin    : 0;
-        margin-top: 32px;
+        margin        : 0;
+        margin-top    : 32px;
     }
+
+    .headline {
+        width        : 300px;
+        margin-left  : 8px;
+        margin-top   : 24px;
+        margin-bottom: 16px;
+    }
+
     .input-field {
-        display: flex;
-        flex-direction: column;
         background-color: #e9edf1;
-        margin-left: 30px;
-        border-radius: 25px;
-        padding-bottom: 25px;
-        padding-top: 10px;
+        margin-left     : 8px;
+        border-radius   : 25px;
+        padding-bottom  : 25px;
+        padding-top     : 10px;
+        width           : 340px;
+    }
+
+    .title-input-field {
+        display        : flex;
+        justify-content: space-between;
+        flex-direction : column;
+        width          : 300px;
+        padding-bottom : 15px;
+        padding-left   : 25px;
+        padding-right  : 25px;
+    }
+
+    .input {
+        min-width    : 0px;
+        height       : 45px;
+        padding      : 5px;
+        border-radius: 8px;
+        padding-left : 1rem;
+        font-size    : 20px;
+        color        : #4a5e72;
+        border       : 1px solid grey;
+        background   : white;
+        outline      : none;
+        appearance   : none;
+    }
+    .selectfield select {
+        width: 300px !important;
+        height: 45px;
+        padding: 5px;
+        font-size: 30px;
+        font-size: 20px;
+        color: #4a5e72;
+        appearance: none;
+        background: url(../img/icons/chevron.png) 95.5% 50% no-repeat;
+        background-color: white;
+        background-size: 30px 20px;
+        padding-left: 1rem;
+        border: 1px solid grey;
+        border-radius: 8px;
+        outline: none;
+        font-family: 'Poppins', sans-serif;
+    }
+    .text-input {
+        width: 300px !important;
     }
 
     .mobile-menu {
@@ -185,15 +245,15 @@
     }
 
     .mobile-logo {
-        width: 40px;
-        height: 40px;
+        width     : 40px;
+        height    : 40px;
         object-fit: contain;
-        padding: 0.25rem;
+        padding   : 0.25rem;
         margin-top: 0.25rem;
     }
 
     .mobile-nav {
-        margin-right: 48px;
+        margin-right: 200px;
     }
 
     .mobile-nav ul {
@@ -208,7 +268,7 @@
         font-size    : 18px;
         margin-bottom: 8px;
         margin-top   : 16px;
-        margin-right: 16px;
+        margin-right : 16px;
     }
 
     .mobile-nav li a {
@@ -217,16 +277,29 @@
         text-decoration: none;
         color          : white;
     }
+
     .user-img-mobile {
-        margin-top: 8px;
+        margin-top : 8px;
         margin-left: 8px;
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none;
     }
 
 
 }
 
-@media (min-width: 768px) {
-    .mobile-menu {
+@media (max-width: 412px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
+@media (min-width: 412px) {
+    .hide-menu-btn {
         display: none;
     }
 }
