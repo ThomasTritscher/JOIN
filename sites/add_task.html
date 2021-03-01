@@ -18,7 +18,7 @@
 
 <body>
 
-    <div class="menu-container">
+    <div class="menu-container hide-element-menu">
 
         <div class="logo">
 
@@ -67,7 +67,7 @@
                             Title
                         </div>
                         <div>
-                            <input id="title-input" class="input"> </input>
+                            <input id="title-input" class="input form-control"> </input>
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@
                             DUE DATE
                         </div>
                         <div class="datefield">
-                            <input id="date-input" type="date" value="2017-06-01" class="input"></input>
+                            <input id="date-input" type="date" value="2017-06-01" class="input form-control"></input>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                             CATEGORY
                         </div>
                         <div class="selectfield">
-                            <select id="category-input" class="select-input">
+                            <select id="category-input" class="select-input form-control">
                                 <option value="Marketing">Marketing</option>
                                 <option value="Product">Product</option>
                                 <option value="Sale">Sale</option>
@@ -102,7 +102,7 @@
                             URGENCY
                         </div>
                         <div class="selectfield">
-                            <select id="urgency-input" class="select-input">
+                            <select id="urgency-input" class="select-input form-control">
                                 <option value="High">High</option>
                                 <option value="Medium">Medium</option>
                                 <option value="Low">Low</option>
@@ -121,7 +121,7 @@
                             <textarea
                                 id="description-input"
                                 placeholder="Write description..."
-                                class="text-input"></textarea>
+                                class="text-input form-control"></textarea>
 
                         </div>
                     </div>
@@ -139,7 +139,7 @@
                         </div>
 
                         <div class="button-box">
-                            <button onclick="cancelTask()" type="button" class="btn btn-secondary btn-custom">CANCEL</button>
+                            <button onclick="cancelTask()" type="button" class="btn btn-secondary">CANCEL</button>
                             <button type="submit" class="btn btn-primary btn-custom">CREATE TASK</button>
                         </div>
 
