@@ -1,5 +1,8 @@
 let profile = document.getElementById('profile');
 
+/**
+ * This function gets the user position and generates the profile.
+ */
 async function showProfile() {
     await init();
     currentUser = localStorage.getItem('currentUser');
@@ -11,6 +14,10 @@ async function showProfile() {
     }
 }
 
+/**
+ * This function generates the html data for the profile.
+ * @param {number} userPosition - This parameter is the user position of the users json array.
+ */
 function profileTemplate(userPosition) {
     return `<div class="profileItem"><span><b>Name:</b> ${users[userPosition].name}</span></div>
             <div class="profileItem"><span><b>Email:</b> ${users[userPosition].email}</span></div>

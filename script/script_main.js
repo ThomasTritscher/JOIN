@@ -62,48 +62,81 @@ async function init() {
     tasks = JSON.parse(backend.getItem('tasks')) || [];
 }
 
+/**
+ * This function gets the user name from the input and saves it in userName.
+ */
 function getName() {
     userName = regName.value;
 }
 
+/**
+ * This function gets the user email from the input and saves it in userEmail.
+ */
 function getEmail() {
     userEmail = regEmail.value;
 }
 
+/**
+ * This function gets the user phone number from the input and saves it in userPhoneNumber.
+ */
 function getPhoneNumber() {
     userPhoneNumber = regPhoneNumber.value;
 }
 
+/**
+ * This function gets the user department from the input and saves it in userDepartment.
+ */
 function getDepartment() {
     userDepartment = regDepartment.value;
 }
 
+/**
+ * This function gets the user position from the input and saves it in userPosition.
+ */
 function getPosition() {
     userPosition = regPosition.value;
 }
 
+/**
+ * This function gets the user office from the input and saves it in userOffice.
+ */
 function getOffice() {
     userOffice = regOffice.value;
 }
 
+/**
+ * This function gets the first user password from the input and saves it in userPassword1.
+ */
 function getPassword1() {
     userPassword1 = regPassword1.value;
 }
 
+/**
+ * This function gets the second user password from the input and saves it in userPassword2.
+ */
 function getPassword2() {
     userPassword2 = regPassword2.value;
 }
 
+/**
+ * This function gets the agb accepted info from the input and saves it in userAgbAccept.
+ */
 function getAgbAccept() {
     userAbgAccept = regAgbAccept.value;
 }
 
+/**
+ * This function sets passwordError to true if the passwords don't match.
+ */
 function checkPassword() {
     if(userPassword1 != userPassword2) {
         passwordError = true;
     }
 }
 
+/**
+ * This function saves a new user to the server.
+ */
 function addUser() {
     getUserInput();
     checkPassword();
@@ -117,6 +150,9 @@ function addUser() {
     }
 }
 
+/**
+ * This function loads the user input from input fields.
+ */
 function getUserInput() {
     getName();
     getEmail();
@@ -171,6 +207,9 @@ function getDescription() {
     taskDescription = descriptionInput.value; 
 }
 
+/**
+ * This function empties input fields.
+ */
 function cancelTask() {
     titleInput.value = '';
     dateInput.value = '';
@@ -179,6 +218,9 @@ function cancelTask() {
     descriptionInput.value = '';
 }
 
+/**
+ * This function creates a new task and saves it on the server.
+ */
 function addTask() {
     getTitle();
     getDate();
@@ -188,8 +230,12 @@ function addTask() {
     newTask = {'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'color': categoryColor, 'urgency': taskUrgency, 'description': taskDescription};
     tasks.push(newTask);
     backend.setItem('tasks', JSON.stringify(tasks));
+    alert('Task added successfully!');
 }
 
+/**
+ * This function gets the user position and generates backlog cards with info about the task.
+ */
 async function showBacklogTasks() {
     await init();
     let currentUserPosition
@@ -206,6 +252,11 @@ async function showBacklogTasks() {
     }
 } 
 
+/**
+ * This function generates the html data for the backlog cards.
+ * @param {number} taskPosition - This parameter is the position of the task in the json array "tasks".
+ * @param {number} currentUserPosition - This parameter is the position of the user in the json array "users".
+ */
 function generateBacklogCardTemplate(taskPosition, currentUserPosition) {
     return `<div class="card"><div class="card-table-container"><div class="line-category color-${tasks[taskPosition].color}"></div>
             <div class="first-div-backlog">${users[currentUserPosition].name}<br>${users[currentUserPosition].email}</div><div class="second-div-backlog">${tasks[taskPosition].category}</div>
