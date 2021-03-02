@@ -15,8 +15,29 @@
 </head>
 
 <body onload="showBacklogTasks()">
+    <div class="mobile-menu">
+        <img src="../img/logo/logo.png" class="mobile-logo" alt="Logo">
+        <nav class="mobile-nav">
+            <ul>
+                <li onmouseover="navItemMove(1)" onmouseout="navItemEnd(1)">
+                    <div id="lineNav1" class="line-navigation"></div><a href="./board.html">Board</a>
+                </li>
+                <li onmouseover="navItemMove(2)" onmouseout="navItemEnd(2)">
+                    <div id="lineNav2" class="line-navigation"></div><a href="./backlog.html">Backlog</a>
+                </li>
+                <li onmouseover="navItemMove(3)" onmouseout="navItemEnd(3)">
+                    <div id="lineNav3" class="line-navigation"></div><a href="./add_task.html">Add Task</a>
+                </li>
+                <li onmouseover="navItemMove(4)" onmouseout="navItemEnd(4)">
+                    <div id="lineNav4" class="line-navigation"></div><a href="./help.html">Help</a>
+                </li>
+                <a href="./profile.html"><img class="user-img-mobile" src="../img/icons/user-img.png"></a>
+            </ul>
+        </nav>
+        <img src="../img/icons/menu-4-48.png" class="hide-menu-btn">
+    </div>
 
-    <div class="menu-container">
+    <div class="menu-container hide-element-menu">
 
         <div class="logo">
 
