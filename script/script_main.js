@@ -141,13 +141,26 @@ function addUser() {
     getUserInput();
     checkPassword();
     if(passwordError == false) {
-        newUser = {'name': userName, 'email': userEmail, 'phoneNumber': userPhoneNumber, 'department': userDepartment, 'position': userPosition, 'office': userOffice, 'password': userPassword1};
+        newUser = {'name': userName, 'userPicture': '../img/icons/user-img.png', 'email': userEmail, 'phoneNumber': userPhoneNumber, 'department': userDepartment, 'position': userPosition, 'office': userOffice, 'password': userPassword1};
         users.push(newUser);
         backend.setItem('users', JSON.stringify(users));
         alert('Profile created successfully!')
     } else {
         alert(`Passwords don't match!`);
     }
+}
+
+async function showUserPicture() {
+    await init();
+    let userImg = document.getElementById('userImg');
+    let currentUserPosition
+    currentUser = localStorage.getItem('currentUser');
+    for(let i = 0; i < users.length; i++) {
+        if(currentUser == users[i].name) {
+            currentUserPosition = i;
+        }
+    }
+    userImg.src = `../php/profiles/${users[currentUserPosition].userPicture}`;
 }
 
 /**

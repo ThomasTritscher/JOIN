@@ -101,4 +101,5 @@ h2 {
     height: 48px;
     width: 48px;
     object-fit: cover;
+    border-radius: 100%;
 }
