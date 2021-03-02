@@ -59,9 +59,7 @@ function navItemEnd(lineNumber) {
 async function init() {
     await downloadFromServer();
     users = JSON.parse(backend.getItem('users')) || [];
-    if(users.length > 0) {
-        tasks = JSON.parse(backend.getItem('tasks')) || [];
-    }
+    tasks = JSON.parse(backend.getItem('tasks')) || [];
 }
 
 function getName() {
