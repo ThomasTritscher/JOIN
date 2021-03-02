@@ -160,10 +160,59 @@
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .hide-element-menu {
         display: none;
     }
+    .mobile-menu {
+        position        : absolute;
+        display         : flex;
+        top             : 0;
+        left            : 0;
+        right           : 0;
+        height          : 3rem;
+        background-color: #1e3190;
+        justify-content : space-between;
+    }
+
+    .mobile-logo {
+        width      : 40px;
+        height     : 40px;
+        object-fit : contain;
+        padding    : 0.25rem;
+        margin-top : 0.25rem;
+        margin-left: 16px;
+    }
+
+    .mobile-nav {
+        margin-right: 200px;
+    }
+
+    .mobile-nav ul {
+        display   : flex;
+        width     : 100%;
+        list-style: none;
+    }
+
+    .mobile-nav li {
+        display   : flex;
+        color     : white;
+        font-size : 12px;
+        margin-top: 16px;
+    }
+
+    .mobile-nav li a {
+        display        : flex;
+        width          : 100%;
+        text-decoration: none;
+        color          : white;
+    }
+
+    .user-img-mobile {
+        margin-top : 8px;
+        margin-left: 8px;
+    }
+
 
     .main-content {
         display       : flex;
@@ -174,14 +223,14 @@
 
     .headline {
         width        : 300px;
-        margin-left  : 8px;
+        margin-left  : 16px;
         margin-top   : 24px;
         margin-bottom: 16px;
     }
 
     .input-field {
         background-color: #e9edf1;
-        margin-left     : 8px;
+        margin-left     : 16px;
         border-radius   : 25px;
         padding-bottom  : 25px;
         padding-top     : 10px;
@@ -192,10 +241,6 @@
         display        : flex;
         justify-content: space-between;
         flex-direction : column;
-        width          : 300px;
-        padding-bottom : 15px;
-        padding-left   : 25px;
-        padding-right  : 25px;
     }
 
     .input {
@@ -211,84 +256,45 @@
         outline      : none;
         appearance   : none;
     }
+
     .selectfield select {
-        width: 300px !important;
-        height: 45px;
-        padding: 5px;
-        font-size: 30px;
-        font-size: 20px;
-        color: #4a5e72;
-        appearance: none;
-        background: url(../img/icons/chevron.png) 95.5% 50% no-repeat;
+        width           : 294px !important;
+        height          : 45px;
+        padding         : 5px;
+        font-size       : 30px;
+        font-size       : 20px;
+        color           : #4a5e72;
+        appearance      : none;
+        background      : url(../img/icons/chevron.png) 95.5% 50% no-repeat;
         background-color: white;
-        background-size: 30px 20px;
-        padding-left: 1rem;
-        border: 1px solid grey;
-        border-radius: 8px;
-        outline: none;
-        font-family: 'Poppins', sans-serif;
+        background-size : 30px 20px;
+        padding-left    : 1rem;
+        border          : 1px solid grey;
+        border-radius   : 8px;
+        outline         : none;
+        font-family     : 'Poppins', sans-serif;
     }
+
     .text-input {
-        width: 300px !important;
+        width: 294px !important;
     }
 
-    .mobile-menu {
-        position        : absolute;
-        display         : flex;
-        top             : 0;
-        left            : 0;
-        right           : 0;
-        width           : 100vw;
-        height          : 3rem;
-        background-color: #1e3190;
-        justify-content : space-between;
+    
+    .button-box {
+        justify-content: flex-start;
     }
 
-    .mobile-logo {
-        width     : 40px;
-        height    : 40px;
-        object-fit: contain;
-        padding   : 0.25rem;
-        margin-top: 0.25rem;
-    }
-
-    .mobile-nav {
-        margin-right: 200px;
-    }
-
-    .mobile-nav ul {
-        display   : flex;
-        width     : 100%;
-        list-style: none;
-    }
-
-    .mobile-nav li {
-        display      : flex;
-        color        : white;
-        font-size    : 18px;
-        margin-bottom: 8px;
-        margin-top   : 16px;
-        margin-right : 16px;
-    }
-
-    .mobile-nav li a {
-        display        : flex;
-        width          : 100%;
-        text-decoration: none;
-        color          : white;
-    }
-
-    .user-img-mobile {
+    .assigned-div {
         margin-top : 8px;
-        margin-left: 8px;
+        margin-left: 0;
+
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .mobile-menu {
         display: none;
     }
-
 
 }
 
