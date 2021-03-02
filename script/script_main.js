@@ -192,16 +192,23 @@ function addTask() {
 
 async function showBacklogTasks() {
     await init();
+    let currentUserPosition
+    currentUser = localStorage.getItem('currentUser');
+    for(let i = 0; i < users.length; i++) {
+        if(currentUser == users[i].name) {
+            currentUserPosition = i;
+        }
+    }
     let backlogScreen = document.getElementById('backlogScreen');
     backlogScreen.innerHTML = '';
     for (let i = 0; i < tasks.length; i++) {
-        backlogScreen.innerHTML += generateBacklogCardTemplate(i);
+        backlogScreen.innerHTML += generateBacklogCardTemplate(i, currentUserPosition);
     }
 } 
 
-function generateBacklogCardTemplate(taskPosition) {
+function generateBacklogCardTemplate(taskPosition, currentUserPosition) {
     return `<div class="card"><div class="card-table-container"><div class="line-category color-${tasks[taskPosition].color}"></div>
-            <div class="first-div-backlog">Name<br> Email</div><div class="second-div-backlog">${tasks[taskPosition].category}</div>
+            <div class="first-div-backlog">${users[currentUserPosition].name}<br>${users[currentUserPosition].email}</div><div class="second-div-backlog">${tasks[taskPosition].category}</div>
             <div class="third-div-backlog">${tasks[taskPosition].description}</div></div></div>`
 }
 
