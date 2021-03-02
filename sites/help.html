@@ -10,10 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="../style/style_main.css" type="text/css">
     <link rel="stylesheet" href="../style/style_help.css" type="text/css">
+    <script src="../backend/mini_backend.js"></script>
     <title>JOIN</title>
 </head>
 
-<body>
+<body onload="showUserPicture()">
 
     <div class="menu-container">
 
@@ -40,7 +41,7 @@
                 </li>
             </ul>
 
-            <a href="./profile.html"><img class="user-img-sidebar" src="../img/icons/user-img.png"></a>
+            <a href="./profile.html"><img class="user-img-sidebar" id="userImg" src=""></a>
 
         </nav>
 
@@ -58,8 +59,9 @@
 
     </div>
 
-    <script src="../backend/mini_backend.js"></script>
+    
     <script src="../script/script_main.js"></script>
+    <script src="../script/script_profile.js"></script>
 
 </body>
 

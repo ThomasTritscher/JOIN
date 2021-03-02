@@ -15,7 +15,7 @@
     <title>JOIN</title>
 </head>
 
-<body onload="showBoardTasks()">
+<body onload="showBoardTasks(), showUserPicture()">
     <div class="mobile-menu">
         <img src="../img/logo/logo.png" class="mobile-logo" alt="Logo">
         <nav class="mobile-nav">
@@ -62,7 +62,7 @@
                 </li>
             </ul>
 
-            <a href="./profile.html"><img class="user-img-sidebar" src="../img/icons/user-img.png"></a>
+            <a href="./profile.html"><img class="user-img-sidebar" id="userImg" src=""></a>
 
         </nav>
 
@@ -108,6 +108,7 @@
     </div>
 
     <script src="../script/script_main.js"></script>
+    <script src="../script/script_profile.js"></script>
 </body>
 
 </html>

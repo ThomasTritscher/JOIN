@@ -21,12 +21,12 @@ async function showProfile() {
 function profileTemplate(userPosition) {
     return `<form action="../php/uploadProfilePic.php" method="post" enctype="multipart/form-data">
         	    <div class="upload-elements"> 
-                    <div id="buttonProfileSubmit" class="button-upload" onclick="getProfilePicture()">Select image</div>
+                    <div id="buttonProfileSubmit" class="button-upload" onclick="getProfilePicture()"><img class="user-img-sidebar" id="userImgProfile" src=""></div>
     
                     <div class="upload"><input id="profilePicUpload" type="file" value="upload"
                     name="profilePicUpload" onchange="subProfile(this)"></div>
         
-                    <input type="submit" class="button" value="Next">
+                    <input type="submit" class="btn btn-primary btn-custom btn-custom" value="Upload">
                 </div>
             </form>
             <div class="profileItem"><span><b>Name:</b> ${users[userPosition].name}</span></div>
@@ -60,4 +60,17 @@ async function setUpProfile(fileNameSaveProfile) {
     }
     users[currentUserPosition].userPicture = fileNameSaveProfile;
     backend.setItem('users', JSON.stringify(users));
+}
+
+async function showUserPictureProfile() {
+    await init();
+    let userImgProfile = document.getElementById('userImgProfile');
+    let currentUserPosition
+    currentUser = localStorage.getItem('currentUser');
+    for(let i = 0; i < users.length; i++) {
+        if(currentUser == users[i].name) {
+            currentUserPosition = i;
+        }
+    }
+    userImgProfile.src = `../php/profiles/${users[currentUserPosition].userPicture}`;
 }

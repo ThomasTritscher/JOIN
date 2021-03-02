@@ -37,3 +37,39 @@
     width: 100%;
 
 }
+
+#fileToUpload {
+    height: 0px;
+    width: 0px; 
+    overflow:hidden;
+}
+
+.upload-elements {
+    display: flex;
+    flex-direction: row;
+}
+
+.upload {
+    height: 0px;
+    width:0px; 
+    overflow: hidden;
+}
+
+.button-upload {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px 0 5px;
+    color: transparent; 
+    text-decoration: none;
+    font-size: 14px;
+    height: 48px;
+    width: 48px;
+    border-radius: 100%;
+    background-color: rgb(80, 80, 80);
+}
+
+.btn-custom {
+    margin-left: 8px;
+}
