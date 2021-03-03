@@ -141,7 +141,7 @@ function addUser() {
     getUserInput();
     checkPassword();
     if(passwordError == false) {
-        newUser = {'name': userName, 'userPicture': '../img/icons/user-img.png', 'email': userEmail, 'phoneNumber': userPhoneNumber, 'department': userDepartment, 'position': userPosition, 'office': userOffice, 'password': userPassword1};
+        newUser = {'name': userName, 'userPicture': 'profile.png', 'email': userEmail, 'phoneNumber': userPhoneNumber, 'department': userDepartment, 'position': userPosition, 'office': userOffice, 'password': userPassword1};
         users.push(newUser);
         backend.setItem('users', JSON.stringify(users));
         alert('Profile created successfully!')
