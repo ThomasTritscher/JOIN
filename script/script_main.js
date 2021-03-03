@@ -330,7 +330,7 @@ async function showBoardTaskInProgress() {
 
 function generateBoardInProgress(taskPosition) {
     for (let i = 0; i < tasks.length; i++) {
-    return `<div id="in-progress${i}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="in-progress${i}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img onclick="deleteTaskInProgress()" height="20px" src="./../img/icons/trash.png"></div>
@@ -358,7 +358,7 @@ async function showBoardTaskTesting() {
 }
 function generateBoardTesting(taskPosition) {
     for (let i = 0; i < tasks.length; i++) {
-    return `<div id="testing${i}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="testing${i}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img onclick="deleteTaskTesting()" height="20px" src="./../img/icons/trash.png"></div>
@@ -386,7 +386,7 @@ async function showBoardTaskDone() {
 }
 function generateBoardDone(taskPosition) {
     for (let i = 0; i < tasks.length; i++) {
-    return `<div id="done${i}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="done${i}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img onclick="deleteTaskDone()" height="20px" src="./../img/icons/trash.png"></div>
