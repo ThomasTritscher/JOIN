@@ -1,8 +1,104 @@
 .reg_formular {
     margin: 24px;
     background-color: rgb(245, 243, 243);
-    box-shadow: 15px 15px 70px grey;
     margin-left: 200px;
     border-radius: 10px;
     padding: 48px !important;
+}
+.btn-custom {
+    background-color: #1e3190;
+    color: white;
+}
+.hide-menu-btn {
+    width       : 24px;
+    height      : 24px;
+    margin      : 0.5rem;
+    margin-right: 40px;
+    padding     : 0.25rem;
+
+}
+
+@media (max-width: 769px) {
+    .hide-element-menu {
+        display: none !important;
+    }
+    .mobile-menu {
+        position        : absolute;
+        display         : flex;
+        top             : 0;
+        left            : 0;
+        right           : 0;
+        height          : 3rem;
+        background-color: #1e3190;
+        justify-content : space-between;
+    }
+    .reg_formular {
+        
+        background-color: rgb(245, 243, 243);
+        margin-top: 60px;
+        margin-left: 16px;
+        border-radius: 10px;
+        padding: 48px !important;
+    }
+
+    .mobile-logo {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        padding: 8px;
+        margin-left: 8px;
+        margin-top: 4px;
+    }
+
+    .mobile-nav {
+        display     : flex;
+        align-items : center;
+        margin-right: 16px;
+    }
+
+    .mobile-nav ul {
+        display   : flex;
+        width     : 100%;
+        list-style: none;
+    }
+
+    .mobile-nav li {
+        display   : flex;
+        color     : white;
+        font-size : 12px;
+        margin-top: 16px;
+    }
+
+    .mobile-nav li a {
+        display        : flex;
+        width          : 100%;
+        text-decoration: none;
+        color          : white;
+    }
+
+    .user-img-mobile {
+        margin-top : 8px;
+        margin-left: 8px;
+    }
+
+}
+
+
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none;
+    }
+
+}
+
+@media (max-width: 412px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
+@media (min-width: 412px) {
+    .hide-menu-btn {
+        display: none;
+    }
 }
