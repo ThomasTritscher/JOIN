@@ -234,22 +234,25 @@ function cancelTask() {
 /**
  * This function creates a new task and saves it on the server.
  */
-function addTask() {
+async function addTask() {
+    await init();
+    getCurrentUserPosition();
+    currentUserPosition = localStorage.getItem('currentUserPosition')
     getTitle();
     getDate();
     getCategory();
     getUrgency();
     getDescription();
-    newTask = {'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'color': categoryColor, 'urgency': taskUrgency, 'description': taskDescription};
+    newTask = {'name': users[currentUserPosition].name, 'email': users[currentUserPosition].email, 'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'color': categoryColor, 'urgency': taskUrgency, 'description': taskDescription};
     tasks.push(newTask);
     backend.setItem('tasks', JSON.stringify(tasks));
     alert('Task added successfully!');
 }
 
 /**
- * This function gets the user position and generates backlog cards with info about the task.
+ * This function gets the user position.
  */
-async function showBacklogTasks() {
+async function getCurrentUserPosition() {
     await init();
     let currentUserPosition
     currentUser = localStorage.getItem('currentUser');
@@ -258,10 +261,18 @@ async function showBacklogTasks() {
             currentUserPosition = i;
         }
     }
+    localStorage.setItem('currentUserPosition', currentUserPosition);
+} 
+
+/**
+ * This function gets the user position and generates backlog cards with info about the task.
+ */
+async function showBacklogTasks() {
+    await init();
     let backlogScreen = document.getElementById('backlogScreen');
     backlogScreen.innerHTML = '';
     for (let i = 0; i < tasks.length; i++) {
-        backlogScreen.innerHTML += generateBacklogCardTemplate(i, currentUserPosition);
+        backlogScreen.innerHTML += generateBacklogCardTemplate(i);
     }
 } 
 
@@ -270,9 +281,9 @@ async function showBacklogTasks() {
  * @param {number} taskPosition - This parameter is the position of the task in the json array "tasks".
  * @param {number} currentUserPosition - This parameter is the position of the user in the json array "users".
  */
-function generateBacklogCardTemplate(taskPosition, currentUserPosition) {
+function generateBacklogCardTemplate(taskPosition) {
     return `<div class="card"><div class="card-table-container"><div class="line-category color-${tasks[taskPosition].color}"></div>
-            <div class="first-div-backlog">${users[currentUserPosition].name}<br>${users[currentUserPosition].email}</div><div class="second-div-backlog">${tasks[taskPosition].category}</div>
+            <div class="first-div-backlog">${tasks[taskPosition].name}<br>${tasks[taskPosition].email}</div><div class="second-div-backlog">${tasks[taskPosition].category}</div>
             <div class="third-div-backlog">${tasks[taskPosition].description}</div></div></div>`
 }
 
