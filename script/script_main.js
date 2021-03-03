@@ -300,6 +300,7 @@ async function showBoardTaskToDo() {
 }
 
 function generateBoardToDo(taskPosition) {
+    for (let i = 0; i < tasks.length; i++) {
     return `<div id="to-do${i}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
@@ -316,6 +317,7 @@ function generateBoardToDo(taskPosition) {
 </div>
 `
 }
+}
 async function showBoardTaskInProgress() {
 
     await init();
@@ -327,6 +329,7 @@ async function showBoardTaskInProgress() {
 }
 
 function generateBoardInProgress(taskPosition) {
+    for (let i = 0; i < tasks.length; i++) {
     return `<div id="in-progress${i}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
@@ -343,6 +346,7 @@ function generateBoardInProgress(taskPosition) {
 </div>
 `
 }
+}
 async function showBoardTaskTesting() {
 
     await init();
@@ -353,6 +357,7 @@ async function showBoardTaskTesting() {
     }
 }
 function generateBoardTesting(taskPosition) {
+    for (let i = 0; i < tasks.length; i++) {
     return `<div id="testing${i}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
@@ -369,6 +374,7 @@ function generateBoardTesting(taskPosition) {
 </div>
 `
 }
+}
 async function showBoardTaskDone() {
 
     await init();
@@ -379,6 +385,7 @@ async function showBoardTaskDone() {
     }
 }
 function generateBoardDone(taskPosition) {
+    for (let i = 0; i < tasks.length; i++) {
     return `<div id="done${i}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
@@ -394,7 +401,7 @@ function generateBoardDone(taskPosition) {
 </div>
 `
 }
-
+}
 async function showBoardTasks() {
     await init();
     showBoardTaskToDo();
