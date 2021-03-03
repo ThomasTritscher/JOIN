@@ -1,15 +1,15 @@
 .main-content {
-    display: flex;
-    flex-direction: column;
+    display        : flex;
+    flex-direction : column;
     justify-content: flex-start;
-    align-items: flex-start;
-    height: 100vh;
-    margin-left: 150px;
+    align-items    : flex-start;
+    height         : 100vh;
+    margin-left    : 150px;
 }
 
-.headline{
+.headline {
     margin-left: 40px;
-    margin-top: 22px;
+    margin-top : 22px;
 }
 
 .headline h2 {
@@ -17,59 +17,173 @@
 }
 
 .input-field {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : flex-start;
+    align-items     : flex-start;
     background-color: rgb(244, 243, 251);
-    padding: 24px;
-    width: 952px;
-    margin-left: 40px;
-    border-radius: 5px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding         : 24px;
+    width           : 952px;
+    margin-left     : 40px;
+    border-radius   : 5px;
+    padding-bottom  : 20px;
+    padding-top     : 20px;
 }
 
 .profileItem {
-    display: flex;
+    display        : flex;
     justify-content: flex-start;
-    align-items: center;
-    width: 100%;
+    align-items    : center;
+    width          : 100%;
 
 }
 
 #fileToUpload {
-    height: 0px;
-    width: 0px; 
-    overflow:hidden;
+    height  : 0px;
+    width   : 0px;
+    overflow: hidden;
 }
 
 .upload-elements {
-    display: flex;
+    display       : flex;
     flex-direction: row;
 }
 
 .upload {
-    height: 0px;
-    width:0px; 
+    height  : 0px;
+    width   : 0px;
     overflow: hidden;
 }
 
 .button-upload {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5px 0 5px;
-    color: transparent; 
-    text-decoration: none;
-    font-size: 14px;
-    height: 48px;
-    width: 48px;
-    border-radius: 100%;
+    cursor          : pointer;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    padding         : 0 5px 0 5px;
+    color           : transparent;
+    text-decoration : none;
+    font-size       : 14px;
+    height          : 48px;
+    width           : 48px;
+    border-radius   : 100%;
     background-color: rgb(80, 80, 80);
 }
 
 .btn-custom {
     margin-left: 8px;
+}
+
+.hide-menu-btn {
+    width: 30px;
+    height: 30px;
+    margin: 0.5rem;
+    margin-right: 16px;
+    padding: 0.25rem;
+
+}
+
+@media (max-width: 769px) {
+    .hide-element-menu {
+        display: none !important;
+    }
+
+    .main-content {
+        display       : flex;
+        flex-direction: column;
+        margin        : 0;
+        margin-top    : 32px;
+    }
+
+    .headline {
+        display       : flex;
+        flex-direction: column;
+        margin-bottom : 16px !important;
+        margin-left   : 16px;
+    }
+
+    .mobile-menu {
+        position        : absolute;
+        display         : flex;
+        top             : 0;
+        left            : 0;
+        right           : 0;
+        height          : 3rem;
+        background-color: #1e3190;
+        justify-content : space-between;
+    }
+
+    .mobile-logo {
+        width      : 40px;
+        height     : 40px;
+        object-fit : contain;
+        padding    : 8px;
+        margin-left: 8px;
+        margin-top : 4px;
+    }
+
+    .mobile-nav {
+        display     : flex;
+        align-items : center;
+        margin-right: 16px;
+    }
+
+    .mobile-nav ul {
+        display   : flex;
+        width     : 100%;
+        list-style: none;
+    }
+
+    .mobile-nav li {
+        display   : flex;
+        color     : white;
+        font-size : 16px;
+        margin-top: 16px;
+    }
+
+    .mobile-nav li a {
+        display        : flex;
+        width          : 100%;
+        text-decoration: none;
+        color          : white;
+    }
+
+    .user-img-mobile {
+        margin-top : 12px;
+        margin-left: 12px;
+    }
+
+    .input-field {
+        display         : flex;
+        flex-direction  : column;
+        justify-content : flex-start;
+        align-items     : flex-start;
+        width: 90%;
+        background-color: rgb(244, 243, 251);
+        padding         : 24px;
+        margin-left     : 12px;
+        border-radius   : 5px;
+        padding-bottom  : 20px;
+        padding-top     : 20px;
+    }
+}
+
+
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none;
+    }
+
+}
+
+@media (max-width: 412px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
+@media (min-width: 412px) {
+    .hide-menu-btn {
+        display: none;
+    }
 }
