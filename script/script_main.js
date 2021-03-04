@@ -39,8 +39,8 @@ setURL('http://server-58.developerakademie.com/JOIN/backend');
  */
 function navItemMove(lineNumber) {
     let lineNavigation = document.getElementById('lineNav' + lineNumber);
-    lineNavigation.style.marginRight = '8px'; 
-    lineNavigation.style.width = '6px';  
+    lineNavigation.style.marginRight = '8px';
+    lineNavigation.style.width = '6px';
 }
 
 /**
@@ -50,7 +50,7 @@ function navItemMove(lineNumber) {
 function navItemEnd(lineNumber) {
     let lineNavigation = document.getElementById('lineNav' + lineNumber);
     lineNavigation.style.marginRight = '32px';
-    lineNavigation.style.width = '0px';    
+    lineNavigation.style.width = '0px';
 }
 
 /**
@@ -129,7 +129,7 @@ function getAgbAccept() {
  * This function sets passwordError to true if the passwords don't match.
  */
 function checkPassword() {
-    if(userPassword1 != userPassword2) {
+    if (userPassword1 != userPassword2) {
         passwordError = true;
     }
 }
@@ -140,8 +140,8 @@ function checkPassword() {
 function addUser() {
     getUserInput();
     checkPassword();
-    if(passwordError == false) {
-        newUser = {'name': userName, 'userPicture': 'profile.png', 'email': userEmail, 'phoneNumber': userPhoneNumber, 'department': userDepartment, 'position': userPosition, 'office': userOffice, 'password': userPassword1};
+    if (passwordError == false) {
+        newUser = { 'name': userName, 'userPicture': 'profile.png', 'email': userEmail, 'phoneNumber': userPhoneNumber, 'department': userDepartment, 'position': userPosition, 'office': userOffice, 'password': userPassword1 };
         users.push(newUser);
         backend.setItem('users', JSON.stringify(users));
         alert('Profile created successfully!')
@@ -155,8 +155,8 @@ async function showUserPicture() {
     let userImg = document.getElementById('userImg');
     let currentUserPosition
     currentUser = localStorage.getItem('currentUser');
-    for(let i = 0; i < users.length; i++) {
-        if(currentUser == users[i].name) {
+    for (let i = 0; i < users.length; i++) {
+        if (currentUser == users[i].name) {
             currentUserPosition = i;
         }
     }
@@ -189,7 +189,7 @@ function getTitle() {
  * This function gets the date from the input and saves it in taskDate.
  */
 function getDate() {
-    taskDate = dateInput.value; 
+    taskDate = dateInput.value;
 }
 
 /**
@@ -197,11 +197,11 @@ function getDate() {
  */
 function getCategory() {
     taskCategory = categoryInput.value;
-    if(taskCategory == 'Marketing') {
+    if (taskCategory == 'Marketing') {
         categoryColor = 'orange';
-    } else if(taskCategory == 'Product') {
+    } else if (taskCategory == 'Product') {
         categoryColor = 'pink';
-    } else if(taskCategory == 'Sale') {
+    } else if (taskCategory == 'Sale') {
         categoryColor = 'green';
     }
 }
@@ -210,14 +210,14 @@ function getCategory() {
  * This function gets the urgency from the input and saves it in taskUrgency.
  */
 function getUrgency() {
-    taskUrgency = urgencyInput.value; 
+    taskUrgency = urgencyInput.value;
 }
 
 /**
  * This function gets the description from the input and saves it in taskDescription.
  */
 function getDescription() {
-    taskDescription = descriptionInput.value; 
+    taskDescription = descriptionInput.value;
 }
 
 /**
@@ -243,7 +243,7 @@ async function addTask() {
     getCategory();
     getUrgency();
     getDescription();
-    newTask = {'name': users[currentUserPosition].name, 'email': users[currentUserPosition].email, 'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'color': categoryColor, 'urgency': taskUrgency, 'description': taskDescription};
+    newTask = { 'name': users[currentUserPosition].name, 'email': users[currentUserPosition].email, 'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'color': categoryColor, 'urgency': taskUrgency, 'description': taskDescription };
     tasks.push(newTask);
     backend.setItem('tasks', JSON.stringify(tasks));
     alert('Task added successfully!');
@@ -256,13 +256,13 @@ async function getCurrentUserPosition() {
     await init();
     let currentUserPosition
     currentUser = localStorage.getItem('currentUser');
-    for(let i = 0; i < users.length; i++) {
-        if(currentUser == users[i].name) {
+    for (let i = 0; i < users.length; i++) {
+        if (currentUser == users[i].name) {
             currentUserPosition = i;
         }
     }
     localStorage.setItem('currentUserPosition', currentUserPosition);
-} 
+}
 
 /**
  * This function gets the user position and generates backlog cards with info about the task.
@@ -274,7 +274,7 @@ async function showBacklogTasks() {
     for (let i = 0; i < tasks.length; i++) {
         backlogScreen.innerHTML += generateBacklogCardTemplate(i);
     }
-} 
+}
 
 /**
  * This function generates the html data for the backlog cards.
@@ -301,7 +301,7 @@ async function showBoardTaskToDo() {
 
 function generateBoardToDo(taskPosition) {
     for (let i = 0; i < tasks.length; i++) {
-    return `<div id="to-do${i}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+        return `<div id="to-do${i}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img onclick="deleteTaskToDo()" height="20px" src="./../img/icons/trash.png"></div>
@@ -316,7 +316,7 @@ function generateBoardToDo(taskPosition) {
     </div>
 </div>
 `
-}
+    }
 }
 async function showBoardTaskInProgress() {
 
@@ -330,7 +330,7 @@ async function showBoardTaskInProgress() {
 
 function generateBoardInProgress(taskPosition) {
     for (let i = 0; i < tasks.length; i++) {
-    return `<div id="in-progress${i}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+        return `<div id="in-progress${i}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img onclick="deleteTaskInProgress()" height="20px" src="./../img/icons/trash.png"></div>
@@ -345,7 +345,7 @@ function generateBoardInProgress(taskPosition) {
     </div>
 </div>
 `
-}
+    }
 }
 async function showBoardTaskTesting() {
 
@@ -358,7 +358,7 @@ async function showBoardTaskTesting() {
 }
 function generateBoardTesting(taskPosition) {
     for (let i = 0; i < tasks.length; i++) {
-    return `<div id="testing${i}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+        return `<div id="testing${i}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img onclick="deleteTaskTesting()" height="20px" src="./../img/icons/trash.png"></div>
@@ -373,7 +373,7 @@ function generateBoardTesting(taskPosition) {
     </div>
 </div>
 `
-}
+    }
 }
 async function showBoardTaskDone() {
 
@@ -386,7 +386,7 @@ async function showBoardTaskDone() {
 }
 function generateBoardDone(taskPosition) {
     for (let i = 0; i < tasks.length; i++) {
-    return `<div id="done${i}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+        return `<div id="done${i}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img onclick="deleteTaskDone()" height="20px" src="./../img/icons/trash.png"></div>
@@ -400,7 +400,7 @@ function generateBoardDone(taskPosition) {
     </div>
 </div>
 `
-}
+    }
 }
 async function showBoardTasks() {
     await init();
@@ -414,46 +414,46 @@ async function showBoardTasks() {
 async function goToInProgress(position) {
     await init();
     for (let i = 0; i < tasks.length; i++) {
-    document.getElementById('to-do' + position).classList.add('d-none1');
-    document.getElementById('in-progress' + position).classList.remove('d-none1');
-}
+        document.getElementById('to-do' + position).classList.add('d-none1');
+        document.getElementById('in-progress' + position).classList.remove('d-none1');
+    }
 }
 
 async function goBackToDo(position) {
     await init();
     for (let i = 0; i < tasks.length; i++) {
-    document.getElementById('to-do' + position).classList.remove('d-none1');
-    document.getElementById('in-progress' + position).classList.add('d-none1');
-}
+        document.getElementById('to-do' + position).classList.remove('d-none1');
+        document.getElementById('in-progress' + position).classList.add('d-none1');
+    }
 }
 
 async function goToTesting(position) {
     await init();
     for (let i = 0; i < tasks.length; i++) {
-    document.getElementById('testing' + position).classList.remove('d-none1');
-    document.getElementById('in-progress' + position).classList.add('d-none1');
-}
+        document.getElementById('testing' + position).classList.remove('d-none1');
+        document.getElementById('in-progress' + position).classList.add('d-none1');
+    }
 }
 async function goToDone(position) {
     await init();
     for (let i = 0; i < tasks.length; i++) {
-    document.getElementById('done' + position).classList.remove('d-none1');
-    document.getElementById('testing' + position).classList.add('d-none1');
-}
+        document.getElementById('done' + position).classList.remove('d-none1');
+        document.getElementById('testing' + position).classList.add('d-none1');
+    }
 }
 async function goBackInProgress(position) {
     await init();
     for (let i = 0; i < tasks.length; i++) {
-    document.getElementById('in-progress' + position).classList.remove('d-none1');
-    document.getElementById('testing' + position).classList.add('d-none1');
-}
+        document.getElementById('in-progress' + position).classList.remove('d-none1');
+        document.getElementById('testing' + position).classList.add('d-none1');
+    }
 }
 async function goBackToTesting(position) {
     await init();
     for (let i = 0; i < tasks.length; i++) {
-    document.getElementById('done' + position).classList.add('d-none1');
-    document.getElementById('testing' + position).classList.remove('d-none1');
-}
+        document.getElementById('done' + position).classList.add('d-none1');
+        document.getElementById('testing' + position).classList.remove('d-none1');
+    }
 }
 // delete task
 
@@ -475,4 +475,16 @@ async function deleteTaskTesting() {
 async function deleteTaskDone() {
     await init();
     document.getElementById('pushboard-done').classList.add('d-none1');
+}
+/**
+ * This function displays the mobile overlay menu.
+ */
+function showOverlayMenu() {
+    document.getElementById('overlay-menu').classList.remove('d-none');
+}
+/**
+ * This function close the mobile overlay menu.
+ */
+function closeOverlayMenu() {
+    document.getElementById('overlay-menu').classList.add('d-none');
 }
