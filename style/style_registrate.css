@@ -12,8 +12,8 @@
 }
 
 .hide-menu-btn {
-    width       : 24px;
-    height      : 24px;
+    width: 1.75rem;
+    height: 1.75rem;
     margin      : 0.75rem;
     margin-right: 16px;
     padding     : 0.25rem;
@@ -40,9 +40,9 @@
     top     : 0;
     right   : 0;
     padding : 8px;
-    margin  : 16px;
-    width   : 48px;
-    height  : 48px;
+    margin  : 8px;
+    width   : 42px;
+    height  : 42px;
     z-index : 99;
     cursor  : pointer;
 }
@@ -112,11 +112,7 @@
         margin-left: 8px;
     }
 
-    a {
-        text-decoration: none;
-        color          : white;
-        font-size: 2rem;
-    }
+
 
 }
 
@@ -132,10 +128,21 @@
     .mobile-nav {
         display: none;
     }
+
+    a {
+        text-decoration: none;
+        color          : white;
+        font-size      : 1.5rem;
+    }
+
+    a:hover {
+        color: #1e3190;
+    }
 }
 
 @media (min-width: 412px) {
     .hide-menu-btn {
         display: none;
     }
+
 }
