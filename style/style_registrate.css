@@ -10,6 +10,9 @@
     background-color: #1e3190;
     color           : white;
 }
+/**
+ * Part of the mobile menu.
+ */
 
 .hide-menu-btn {
     width: 1.75rem;
@@ -46,6 +49,10 @@
     z-index : 99;
     cursor  : pointer;
 }
+
+/**
+ * under above are the medie querys.
+ */
 
 @media (max-width: 769px) {
     .hide-element-menu {
@@ -115,7 +122,6 @@
 
 
 }
-
 
 @media (min-width: 769px) {
     .mobile-menu {
