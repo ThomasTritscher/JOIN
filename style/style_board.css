@@ -19,12 +19,9 @@ h3 {
 }
 
 .dashboard-container {
-    display        : flex;
-    justify-content: space-evenly;
-    align-items    : flex-start;
-    width          : 800px;
-    margin-left    : 18px;
-    height         : 100%;
+    display    : flex;
+    margin-left: 2rem;
+    height     : 100%;
 }
 
 .headline {
@@ -98,18 +95,22 @@ h3 {
     display       : flex;
     flex-direction: column;
     align-items   : center;
-    width         : 150px;
+    width         : 10rem;
     height        : 75%;
+}
+
+.dashboard-row {
+    display: flex;
 }
 
 .pushboard {
     display         : flex;
-    width           : 100%;
+    width           : 85%;
     height          : 100%;
     background-color: rgba(244, 243, 251, 1);
     border-radius   : 0.3rem;
     margin-left     : 0.75rem;
-    padding         : 1rem;
+    padding         : 0.5rem;
 }
 
 /* Desi test board task*/
@@ -119,7 +120,6 @@ h3 {
     background-color: white;
     border-radius   : 12px;
     border          : none;
-    /* border-left  : 12px solid teal; */
     padding-left    : 8px;
     padding-right   : 8px;
     padding-top     : 8px;
@@ -173,13 +173,13 @@ h3 {
 /**
  * Part of the mobile menu.
  */
- .hide-menu-btn {
-    width       : 24px;
-    height      : 24px;
-    margin      : 0.5rem;
-    margin-right: 40px;
-    padding     : 0.25rem;
-    cursor      : pointer;
+.hide-menu-btn {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0.75rem;
+    margin-right: 4rem;
+    padding: 0.25rem;
+    cursor: pointer;
 }
 
 .overlay-menu {
@@ -277,21 +277,20 @@ h3 {
     }
 
     .dashboard-container {
-        margin-left    : 0px;
-        height         : 100%;
-        display        : flex;
-        justify-content: flex-start;
-        align-items    : flex-start;
-        height         : 100%;
+        display: flex;
+        margin-left: 0;
+    }
+
+    .dashboard-row {
+        display       : flex;
+        flex-direction: column;
     }
 
     .dashboard-section {
         display       : flex;
         flex-direction: column;
         align-items   : center;
-        width         : 11%;
-        height        : 75%;
-
+        height        : 16rem;
     }
 
     .pushboard {
@@ -304,7 +303,7 @@ h3 {
     }
 
     h3 {
-        font-size    : 0.9rem !important;
+        font-size: 0.9rem !important;
     }
 }
 
@@ -320,6 +319,7 @@ h3 {
     .mobile-nav {
         display: none;
     }
+
     ul {
         list-style: none;
     }
