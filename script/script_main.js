@@ -357,7 +357,7 @@ function generateBoardTesting(taskPosition) {
         return `<div id="testing${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskTesting('${position}')" height="20px" src="./../img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskTesting('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
