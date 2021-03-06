@@ -299,6 +299,9 @@ h3 {
     .mobile-menu {
         display: none;
     }
+    .container-board {
+        width: 109px !important;
+    }
 }
 
 @media (max-width: 412px) {
