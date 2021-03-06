@@ -284,7 +284,7 @@ h3 {
     }
     .pushboard {
         display: flex;
-        width: 65%;
+        width: 210px;
         height: 65%;
         background-color: rgba(244, 243, 251, 1);
         border-radius: 0.3rem;
