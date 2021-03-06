@@ -300,17 +300,17 @@ async function showBoardTaskToDo() {
 }
 
 function generateBoardToDo(taskPosition) {
-        return `<div id="to-do${position}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+        return `<div id="to-do${taskPosition}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskToDo('${position}')" height="20px" src="./../img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskToDo('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
         
-        <div><img class="img-board cursorpointer" id="goToInProgress${position}" onclick="goToInProgress('${position}')" src="./../img/icons/next.png"></div>
+        <div><img class="img-board cursorpointer" id="goToInProgress${taskPosition}" onclick="goToInProgress('${taskPosition}')" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>
@@ -328,17 +328,17 @@ async function showBoardTaskInProgress() {
 }
 
 function generateBoardInProgress(taskPosition) {
-        return `<div id="in-progress${position}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+        return `<div id="in-progress${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskInProgress('${position}')" height="20px" src="./../img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskInProgress('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
-        <div><img class="img-board cursorpointer" id="goBackToDo${position}" onclick="goBackToDo('${position}')" src="./../img/icons/previous.png"></div>
-        <div><img class="img-board cursorpointer" id="goToTesting${position}" onclick="goToTesting('${position}')" src="./../img/icons/next.png"></div>
+        <div><img class="img-board cursorpointer" id="goBackToDo${taskPosition}" onclick="goBackToDo('${taskPosition}')" src="./../img/icons/previous.png"></div>
+        <div><img class="img-board cursorpointer" id="goToTesting${taskPosition}" onclick="goToTesting('${taskPosition}')" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>
@@ -354,7 +354,7 @@ async function showBoardTaskTesting() {
     }
 }
 function generateBoardTesting(taskPosition) {
-        return `<div id="testing${position}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+        return `<div id="testing${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskTesting('${position}')" height="20px" src="./../img/icons/trash.png"></div>
@@ -363,8 +363,8 @@ function generateBoardTesting(taskPosition) {
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
-        <div><img class="img-board cursorpointer" id="goBackInProgress${position}" onclick="goBackInProgress('${position}')" src="./../img/icons/previous.png"></div>
-        <div><img class="img-board cursorpointer" id="goToDone${position}" onclick="goToDone('${position}')" src="./../img/icons/next.png"></div>
+        <div><img class="img-board cursorpointer" id="goBackInProgress${taskPosition}" onclick="goBackInProgress('${taskPosition}')" src="./../img/icons/previous.png"></div>
+        <div><img class="img-board cursorpointer" id="goToDone${taskPosition}" onclick="goToDone('${taskPosition}')" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>
@@ -380,16 +380,16 @@ async function showBoardTaskDone() {
     }
 }
 function generateBoardDone(taskPosition) {
-        return `<div id="done${position}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+        return `<div id="done${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskDone('${position}')" height="20px" src="./../img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskDone('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
-        <div><img class="img-board cursorpointer" id="goBackToTesting${position}" onclick="goBackToTesting('${position}')" src="./../img/icons/previous.png"></div>
+        <div><img class="img-board cursorpointer" id="goBackToTesting${taskPosition}" onclick="goBackToTesting('${taskPosition}')" src="./../img/icons/previous.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>
