@@ -304,6 +304,12 @@ h3 {
     }
 }
 
+@media (max-width: 670px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 412px) {
     .mobile-nav {
         display: none;
