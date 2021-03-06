@@ -144,6 +144,11 @@
     cursor: pointer;
 }
 
+.d-none {
+    display: none;
+}
+
+
 @media (max-width: 769px) {
     .hide-element-menu {
         display: none;

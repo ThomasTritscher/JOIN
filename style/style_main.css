@@ -103,3 +103,7 @@ h2 {
     object-fit: cover;
     border-radius: 100%;
 }
+
+.d-none {
+    display: none;
+}
