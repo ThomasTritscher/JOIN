@@ -300,23 +300,22 @@ async function showBoardTaskToDo() {
 }
 
 function generateBoardToDo(taskPosition) {
-    for (let i = 0; i < tasks.length; i++) {
-        return `<div id="to-do${i}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+        return `<div id="to-do${position}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskToDo()" height="20px" src="./../img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskToDo('${position}')" height="20px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
         
-        <div><img class="img-board cursorpointer" id="goToInProgress${i}" onclick="goToInProgress('${i}')" src="./../img/icons/next.png"></div>
+        <div><img class="img-board cursorpointer" id="goToInProgress${position}" onclick="goToInProgress('${position}')" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>
-`
-    }
+`;
+    
 }
 async function showBoardTaskInProgress() {
 
@@ -329,23 +328,21 @@ async function showBoardTaskInProgress() {
 }
 
 function generateBoardInProgress(taskPosition) {
-    for (let i = 0; i < tasks.length; i++) {
-        return `<div id="in-progress${i}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+        return `<div id="in-progress${position}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskInProgress()" height="20px" src="./../img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskInProgress('${position}')" height="20px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
-        <div><img class="img-board cursorpointer" id="goBackToDo${i}" onclick="goBackToDo('${i}')" src="./../img/icons/previous.png"></div>
-        <div><img class="img-board cursorpointer" id="goToTesting${i}" onclick="goToTesting('${i}')" src="./../img/icons/next.png"></div>
+        <div><img class="img-board cursorpointer" id="goBackToDo${position}" onclick="goBackToDo('${position}')" src="./../img/icons/previous.png"></div>
+        <div><img class="img-board cursorpointer" id="goToTesting${position}" onclick="goToTesting('${position}')" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>
-`
-    }
+`;
 }
 async function showBoardTaskTesting() {
 
@@ -357,23 +354,21 @@ async function showBoardTaskTesting() {
     }
 }
 function generateBoardTesting(taskPosition) {
-    for (let i = 0; i < tasks.length; i++) {
-        return `<div id="testing${i}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+        return `<div id="testing${position}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskTesting()" height="20px" src="./../img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskTesting('${position}')" height="20px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
-        <div><img class="img-board cursorpointer" id="goBackInProgress${i}" onclick="goBackInProgress('${i}')" src="./../img/icons/previous.png"></div>
-        <div><img class="img-board cursorpointer" id="goToDone${i}" onclick="goToDone('${i}')" src="./../img/icons/next.png"></div>
+        <div><img class="img-board cursorpointer" id="goBackInProgress${position}" onclick="goBackInProgress('${position}')" src="./../img/icons/previous.png"></div>
+        <div><img class="img-board cursorpointer" id="goToDone${position}" onclick="goToDone('${position}')" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>
-`
-    }
+`;
 }
 async function showBoardTaskDone() {
 
@@ -385,22 +380,20 @@ async function showBoardTaskDone() {
     }
 }
 function generateBoardDone(taskPosition) {
-    for (let i = 0; i < tasks.length; i++) {
-        return `<div id="done${i}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+        return `<div id="done${position}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
-    <div class="dustbin" style="font-size: 10px" onclick="deleteTask(1)"><img onclick="deleteTaskDone()" height="20px" src="./../img/icons/trash.png"></div>
+    <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskDone('${position}')" height="20px" src="./../img/icons/trash.png"></div>
 </div>
     <div>${tasks[taskPosition].category}</div>
     <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
         <div class="date-board">${tasks[taskPosition].date}</div>
-        <div><img class="img-board cursorpointer" id="goBackToTesting${i}" onclick="goBackToTesting('${i}')" src="./../img/icons/previous.png"></div>
+        <div><img class="img-board cursorpointer" id="goBackToTesting${position}" onclick="goBackToTesting('${position}')" src="./../img/icons/previous.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
 </div>
-`
-    }
+`;
 }
 async function showBoardTasks() {
     await init();
@@ -457,24 +450,32 @@ async function goBackToTesting(position) {
 }
 // delete task
 
-async function deleteTaskToDo() {
+async function deleteTaskToDo(position) {
     await init();
-    document.getElementById('pushboard-to-do').classList.add('d-none1');
+    for (let i = 0; i < tasks.length; i++) {
+    document.getElementById('to-do' + position).classList.add('d-none1');
+}
 }
 
-async function deleteTaskInProgress() {
+async function deleteTaskInProgress(position) {
     await init();
-    document.getElementById('pushboard-in-progress').classList.add('d-none1');
+    for (let i = 0; i < tasks.length; i++) {
+    document.getElementById('in-progress' + position).classList.add('d-none1');
+}
 }
 
-async function deleteTaskTesting() {
+async function deleteTaskTesting(position) {
     await init();
-    document.getElementById('pushboard-testing').classList.add('d-none1');
+    for (let i = 0; i < tasks.length; i++) {
+    document.getElementById('testing' + position).classList.add('d-none1');
+}
 }
 
-async function deleteTaskDone() {
+async function deleteTaskDone(position) {
     await init();
-    document.getElementById('pushboard-done').classList.add('d-none1');
+    for (let i = 0; i < tasks.length; i++) {
+    document.getElementById('done' + position).classList.add('d-none1');
+}
 }
 /**
  * This function displays the mobile overlay menu.
