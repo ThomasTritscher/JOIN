@@ -107,3 +107,25 @@ h2 {
 .d-none {
     display: none;
 }
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    
+}
+footer a{
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.footer-nav {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 769px) {
+    .footer-nav {
+        margin-bottom: 1rem;
+    }
+    footer a{
+        text-decoration: none;
+        font-size: 1rem;
+    } 
