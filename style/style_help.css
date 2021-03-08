@@ -16,22 +16,22 @@ h4 {
 
 .description {}
 
+.help-nav {}
+
+.help-nav a {
+    color:black;
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
 .help-img {
     width: 50rem;
     height: 34rem;
 }
 
-.help-nav {
+.help-list {
 
 }
-.help-nav a {
-    color:black;
-    text-decoration: none;
-    font-size: 1.25rem;
-
-}
-
-.help-list {}
 
 
 
@@ -71,6 +71,17 @@ h4 {
     height  : 1.5rem;
     z-index : 99;
     cursor  : pointer;
+}
+footer {
+    margin-top: 2rem;
+    
+}
+footer a{
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.footer-nav {
+    margin-bottom: 2rem;
 }
 
 @media (max-width: 769px) {
@@ -150,10 +161,21 @@ h4 {
         justify-content : center;
         align-items     : center;
     }
+    .help {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
     .help-img {
         width: 20rem;
         height: 11rem;
     }
+    .footer-nav {
+        margin-bottom: 1rem;
+    }
+    footer a{
+        text-decoration: none;
+        font-size: 1rem;
+    } 
 
     @media (min-width: 769px) {
         .mobile-menu {
