@@ -107,6 +107,12 @@ h2 {
 .d-none {
     display: none;
 }
+
+.help-video {
+    margin-left: 56px;
+    margin-top: 24px;
+}
+
 footer {
     display: flex;
     justify-content: center;
