@@ -8,13 +8,24 @@
 }
 h4 {
     font-size: 1.5rem;
+    
+}
+li {
+    font-size: 1.5rem;
+    
+}
+p {
+    font-size: 1.25rem;
+    max-width: 1000px;
 }
 .help {
     margin-left: 1.75rem;
     margin-top: 2rem;
 }
 
-.description {}
+.description {
+
+}
 
 .help-nav {}
 
@@ -84,6 +95,7 @@ footer a{
     margin-bottom: 2rem;
 }
 
+
 @media (max-width: 769px) {
     .hide-element-menu {
         display: none;
@@ -92,13 +104,13 @@ footer a{
         display       : flex;
         flex-direction: column;
         margin        : 0;
-        margin-top    : 32px;
+        margin-top    : 8px;
         height        : 100%;
     }
     h4 {
-        font-size: 1rem;
+        margin-bottom: 0.5rem;
     }
-
+    
     .mobile-menu {
         position        : absolute;
         display         : flex;
@@ -175,7 +187,26 @@ footer a{
     footer a{
         text-decoration: none;
         font-size: 1rem;
-    } 
+    }
+    .help-video {
+        margin-left: 0px;
+        margin-top: 24px;
+    }
+    iframe {
+        width: 300px;
+        height: 200px;
+    }
+    ol {
+        padding: 16px;
+        margin-top: 0px;
+    }
+    li {
+        font-size: 1.25rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+
 
     @media (min-width: 769px) {
         .mobile-menu {
@@ -201,7 +232,7 @@ footer a{
         .overlay-menu a:hover {
             color: #1e3190;
         }
-    }
+    
 
     @media (min-width: 412px) {
         .hide-menu-btn {
