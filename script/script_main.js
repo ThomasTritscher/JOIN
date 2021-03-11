@@ -300,7 +300,7 @@ async function showBoardTaskToDo() {
 }
 
 function generateBoardToDo(taskPosition) {
-        return `<div id="to-do${taskPosition}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="to-do${taskPosition}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskToDo('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
@@ -315,7 +315,7 @@ function generateBoardToDo(taskPosition) {
     </div>
 </div>
 `;
-    
+
 }
 async function showBoardTaskInProgress() {
 
@@ -328,7 +328,7 @@ async function showBoardTaskInProgress() {
 }
 
 function generateBoardInProgress(taskPosition) {
-        return `<div id="in-progress${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="in-progress${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskInProgress('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
@@ -354,7 +354,7 @@ async function showBoardTaskTesting() {
     }
 }
 function generateBoardTesting(taskPosition) {
-        return `<div id="testing${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="testing${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskTesting('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
@@ -380,7 +380,7 @@ async function showBoardTaskDone() {
     }
 }
 function generateBoardDone(taskPosition) {
-        return `<div id="done${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="done${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskDone('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
@@ -453,29 +453,37 @@ async function goBackToTesting(position) {
 async function deleteTaskToDo(position) {
     await init();
     for (let i = 0; i < tasks.length; i++) {
-    document.getElementById('to-do' + position).classList.add('d-none1');
-}
+        tasks.splice(position, 1);
+    }
+    backend.setItem('tasks', JSON.stringify(tasks));
+    showBoardTasks();
 }
 
 async function deleteTaskInProgress(position) {
     await init();
     for (let i = 0; i < tasks.length; i++) {
-    document.getElementById('in-progress' + position).classList.add('d-none1');
-}
+        tasks.splice(position, 1);
+    }
+    backend.setItem('tasks', JSON.stringify(tasks));
+    showBoardTasks();
 }
 
 async function deleteTaskTesting(position) {
     await init();
     for (let i = 0; i < tasks.length; i++) {
-    document.getElementById('testing' + position).classList.add('d-none1');
-}
+        tasks.splice(position, 1);
+    }
+    backend.setItem('tasks', JSON.stringify(tasks));
+    showBoardTasks();
 }
 
 async function deleteTaskDone(position) {
     await init();
     for (let i = 0; i < tasks.length; i++) {
-    document.getElementById('done' + position).classList.add('d-none1');
-}
+        tasks.splice(position, 1);
+    }
+    backend.setItem('tasks', JSON.stringify(tasks));
+    showBoardTasks();
 }
 /**
  * This function displays the mobile overlay menu.
