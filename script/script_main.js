@@ -148,9 +148,11 @@ function addUser() {
         newUser = { 'name': userName, 'userPicture': 'profile.png', 'email': userEmail, 'phoneNumber': userPhoneNumber, 'department': userDepartment, 'position': userPosition, 'office': userOffice, 'password': userPassword1, 'tasks': [] };
         users.push(newUser);
         backend.setItem('users', JSON.stringify(users));
-        alert('Profile created successfully!')
+        alert('Profil erfolgreich erstellt!')
+        window.location.href = "../sites/add_task.html";
+        
     } else {
-        alert(`Passwords don't match!`);
+        alert(`Passwort nicht korrekt`);
     }
 }
 
