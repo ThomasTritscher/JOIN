@@ -167,6 +167,19 @@ async function showUserPicture() {
     userImg.src = `../php/profiles/${users[currentUserPosition].userPicture}`;
 }
 
+async function showUserPictureAddTask() {
+    await init();
+    let userImgAddTask = document.getElementById('userImgAddTask');
+    let currentUserPosition
+    currentUser = localStorage.getItem('currentUser');
+    for (let i = 0; i < users.length; i++) {
+        if (currentUser == users[i].name) {
+            currentUserPosition = i;
+        }
+    }
+    userImgAddTask.src = `../php/profiles/${users[currentUserPosition].userPicture}`;
+}
+
 /**
  * This function loads the user input from input fields.
  */

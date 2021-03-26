@@ -190,7 +190,7 @@
     cursor  : pointer;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 1129px) {
     .hide-element-menu {
         display: none;
     }
@@ -220,12 +220,14 @@
     }
 
     .mobile-nav ul {
+        padding-left: 0;
         display   : flex;
         width     : 100%;
         list-style: none;
     }
 
     .mobile-nav li {
+        width: 80px;
         display   : flex;
         color     : white;
         font-size : 12px;
@@ -339,7 +341,7 @@
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1129px) {
     .mobile-menu {
         display: none;
     }

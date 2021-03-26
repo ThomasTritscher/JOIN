@@ -16,7 +16,7 @@
     <title>Add Task</title>
 </head>
 
-<body onload="init(), showUserPicture()">
+<body onload="init(), showUserPicture(), showUserPictureAddTask()">
     <div class="mobile-menu">
         <img src="../img/logo/logo.png" class="mobile-logo" alt="Logo">
         <nav class="mobile-nav">
@@ -148,8 +148,7 @@
                             ASSIGNED TO
                         </div>
                         <div class="img-icons">
-                            <img class="user-img" src="../img/icons/user-img.png">
-                            <img class="user-img" src="../img/icons/icon plus.png">
+                            <img class="user-img" id="userImgAddTask" src="../img/icons/user-img.png">
                         </div>
 
                         <div class="button-box">
