@@ -61,6 +61,11 @@ async function init() {
     users = JSON.parse(backend.getItem('users')) || [];
 }
 
+async function initTasks() {
+    await downloadFromServer();
+    tasks = JSON.parse(backend.getItem('tasks')) || [];
+}
+
 /**
  * This function gets the user name from the input and saves it in userName.
  */
@@ -243,15 +248,9 @@ async function addTask() {
     getUrgency();
     getDescription();
     newTask = { 'name': users[currentUserPosition].name, 'email': users[currentUserPosition].email, 'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'color': categoryColor, 'urgency': taskUrgency, 'description': taskDescription };
-    addTaskToAllUsers();
-    backend.setItem('users', JSON.stringify(users));
+    tasks.push(newTask);
+    backend.setItem('tasks', JSON.stringify(tasks));
     alert('Task added successfully!');
-}
-
-function addTaskToAllUsers() {
-    for(let i = 0; i > users.length; i++) {
-        users[i].tasks.push(newTask);
-    }
 }
 
 /**
@@ -273,13 +272,11 @@ async function getCurrentUserPosition() {
  * This function gets the user position and generates backlog cards with info about the task.
  */
 async function showBacklogTasks() {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
+    await initTasks();
     let backlogScreen = document.getElementById('backlogScreen');
     backlogScreen.innerHTML = '';
-    for (let i = 0; i < users[currentUserPosition].tasks.length; i++) {
-        backlogScreen.innerHTML += generateBacklogCardTemplate(i, currentUserPosition);
+    for (let i = 0; i < tasks.length; i++) {
+        backlogScreen.innerHTML += generateBacklogCardTemplate(i);
     }
 }
 
@@ -288,35 +285,33 @@ async function showBacklogTasks() {
  * @param {number} taskPosition - This parameter is the position of the task in the json array "tasks".
  * @param {number} currentUserPosition - This parameter is the position of the user in the json array "users".
  */
-function generateBacklogCardTemplate(taskPosition, currentUserPosition) {
-    return `<div class="card"><div class="card-table-container"><div class="line-category color-${users[currentUserPosition].tasks[taskPosition].color}"></div>
-            <div class="first-div-backlog">${users[currentUserPosition].tasks[taskPosition].name}<br>${users[currentUserPosition].tasks[taskPosition].email}</div><div class="second-div-backlog">${users[currentUserPosition].tasks[taskPosition].category}</div>
-            <div class="third-div-backlog">${users[currentUserPosition].tasks[taskPosition].description}</div></div></div>`
+function generateBacklogCardTemplate(taskPosition) {
+    return `<div class="card"><div class="card-table-container"><div class="line-category color-${tasks[taskPosition].color}"></div>
+            <div class="first-div-backlog">${tasks[taskPosition].name}<br>${tasks[taskPosition].email}</div><div class="second-div-backlog">${tasks[taskPosition].category}</div>
+            <div class="third-div-backlog">${tasks[taskPosition].description}</div></div></div>`
 }
 
 // This function generate board tasks
 
 async function showBoardTaskToDo() {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
+    await initTasks();
     let pushboardToDo = document.getElementById('pushboard-to-do');
     pushboardToDo.innerHTML = '';
-    for (let i = 0; i < users[currentUserPosition].tasks.length; i++) {
-        pushboardToDo.innerHTML += generateBoardToDo(i, currentUserPosition);
+    for (let i = 0; i < tasks.length; i++) {
+        pushboardToDo.innerHTML += generateBoardToDo(i);
     }
 }
 
-function generateBoardToDo(taskPosition, currentUserPosition) {
-    return `<div id="to-do${taskPosition}" class="container-board" style="border-left: 12px solid ${users[currentUserPosition].tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+function generateBoardToDo(taskPosition) {
+    return `<div id="to-do${taskPosition}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
-    <div class="blue board-bold">${users[currentUserPosition].tasks[taskPosition].title}</div>
+    <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskToDo('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
 </div>
-    <div>${users[currentUserPosition].tasks[taskPosition].category}</div>
-    <div>${users[currentUserPosition].tasks[taskPosition].urgency}</div>
+    <div>${tasks[taskPosition].category}</div>
+    <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
-        <div class="date-board">${users[currentUserPosition].tasks[taskPosition].date}</div>
+        <div class="date-board">${tasks[taskPosition].date}</div>
         
         <div><img class="img-board cursorpointer" id="goToInProgress${taskPosition}" onclick="goToInProgress('${taskPosition}')" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
@@ -326,26 +321,24 @@ function generateBoardToDo(taskPosition, currentUserPosition) {
 
 }
 async function showBoardTaskInProgress() {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
+    await initTasks();
     let pushboardInProgress = document.getElementById('pushboard-in-progress');
     pushboardInProgress.innerHTML = '';
-    for (let i = 0; i < users[currentUserPosition].tasks.length; i++) {
-        pushboardInProgress.innerHTML += generateBoardInProgress(i, currentUserPosition);
+    for (let i = 0; i < tasks.length; i++) {
+        pushboardInProgress.innerHTML += generateBoardInProgress(i);
     }
 }
 
-function generateBoardInProgress(taskPosition, currentUserPosition) {
-    return `<div id="in-progress${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${users[currentUserPosition].tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+function generateBoardInProgress(taskPosition) {
+    return `<div id="in-progress${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
-    <div class="blue board-bold">${users[currentUserPosition].tasks[taskPosition].title}</div>
+    <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskInProgress('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
 </div>
-    <div>${users[currentUserPosition].tasks[taskPosition].category}</div>
-    <div>${users[currentUserPosition].tasks[taskPosition].urgency}</div>
+    <div>${tasks[taskPosition].category}</div>
+    <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
-        <div class="date-board">${users[currentUserPosition].tasks[taskPosition].date}</div>
+        <div class="date-board">${tasks[taskPosition].date}</div>
         <div><img class="img-board cursorpointer" id="goBackToDo${taskPosition}" onclick="goBackToDo('${taskPosition}')" src="./../img/icons/previous.png"></div>
         <div><img class="img-board cursorpointer" id="goToTesting${taskPosition}" onclick="goToTesting('${taskPosition}')" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
@@ -354,25 +347,23 @@ function generateBoardInProgress(taskPosition, currentUserPosition) {
 `;
 }
 async function showBoardTaskTesting() {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
+    await initTasks();
     let pushboardTesting = document.getElementById('pushboard-testing');
     pushboardTesting.innerHTML = '';
-    for (let i = 0; i < users[currentUserPosition].tasks.length; i++) {
-        pushboardTesting.innerHTML += generateBoardTesting(i, currentUserPosition);
+    for (let i = 0; i < tasks.length; i++) {
+        pushboardTesting.innerHTML += generateBoardTesting(i);
     }
 }
-function generateBoardTesting(taskPosition, currentUserPosition) {
-    return `<div id="testing${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${users[currentUserPosition].tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+function generateBoardTesting(taskPosition) {
+    return `<div id="testing${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
-    <div class="blue board-bold">${users[currentUserPosition].tasks[taskPosition].title}</div>
+    <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskTesting('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
 </div>
-    <div>${users[currentUserPosition].tasks[taskPosition].category}</div>
-    <div>${users[currentUserPosition].tasks[taskPosition].urgency}</div>
+    <div>${tasks[taskPosition].category}</div>
+    <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
-        <div class="date-board">${users[currentUserPosition].tasks[taskPosition].date}</div>
+        <div class="date-board">${tasks[taskPosition].date}</div>
         <div><img class="img-board cursorpointer" id="goBackInProgress${taskPosition}" onclick="goBackInProgress('${taskPosition}')" src="./../img/icons/previous.png"></div>
         <div><img class="img-board cursorpointer" id="goToDone${taskPosition}" onclick="goToDone('${taskPosition}')" src="./../img/icons/next.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
@@ -381,25 +372,23 @@ function generateBoardTesting(taskPosition, currentUserPosition) {
 `;
 }
 async function showBoardTaskDone() {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
+    await initTasks();
     let pushboardDone = document.getElementById('pushboard-done');
     pushboardDone.innerHTML = '';
-    for (let i = 0; i < users[currentUserPosition].tasks.length; i++) {
-        pushboardDone.innerHTML += generateBoardDone(i, currentUserPosition);
+    for (let i = 0; i < tasks.length; i++) {
+        pushboardDone.innerHTML += generateBoardDone(i);
     }
 }
-function generateBoardDone(taskPosition, currentUserPosition) {
-    return `<div id="done${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${users[currentUserPosition].tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+function generateBoardDone(taskPosition) {
+    return `<div id="done${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
-    <div class="blue board-bold">${users[currentUserPosition].tasks[taskPosition].title}</div>
+    <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskDone('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
 </div>
-    <div>${users[currentUserPosition].tasks[taskPosition].category}</div>
-    <div>${users[currentUserPosition].tasks[taskPosition].urgency}</div>
+    <div>${tasks[taskPosition].category}</div>
+    <div>${tasks[taskPosition].urgency}</div>
     <div class="date-img-container d-flex">
-        <div class="date-board">${users[currentUserPosition].tasks[taskPosition].date}</div>
+        <div class="date-board">${tasks[taskPosition].date}</div>
         <div><img class="img-board cursorpointer" id="goBackToTesting${taskPosition}" onclick="goBackToTesting('${taskPosition}')" src="./../img/icons/previous.png"></div>
         <div><img class="img-board" src="./../img/icons/junge.png"></div>
     </div>
@@ -416,57 +405,45 @@ async function showBoardTasks() {
 // Move to other board
 
 async function goToInProgress(position) {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
-    for (let i = 0; i < users[currentUserPosition].tasks.length; i++) {
+    await initTasks();
+    for (let i = 0; i < tasks.length; i++) {
         document.getElementById('to-do' + position).classList.add('d-none1');
         document.getElementById('in-progress' + position).classList.remove('d-none1');
     }
 }
 
 async function goBackToDo(position) {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
-    for (let i = 0; i < users[currentUserPosition].tasks.length; i++) {
+    await initTasks();
+    for (let i = 0; i < tasks.length; i++) {
         document.getElementById('to-do' + position).classList.remove('d-none1');
         document.getElementById('in-progress' + position).classList.add('d-none1');
     }
 }
 
 async function goToTesting(position) {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
-    for (let i = 0; i < users[currentUserPosition].tasks.length; i++) {
+    await initTasks();
+    for (let i = 0; i < tasks.length; i++) {
         document.getElementById('testing' + position).classList.remove('d-none1');
         document.getElementById('in-progress' + position).classList.add('d-none1');
     }
 }
 async function goToDone(position) {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
-    for (let i = 0; i < users[currentUserPosition].tasks.length; i++) {
+    await initTasks();
+    for (let i = 0; i < tasks.length; i++) {
         document.getElementById('done' + position).classList.remove('d-none1');
         document.getElementById('testing' + position).classList.add('d-none1');
     }
 }
 async function goBackInProgress(position) {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
-    for (let i = 0; i < users[currentUserPosition].tasks.length; i++) {
+    await initTasks();
+    for (let i = 0; i < tasks.length; i++) {
         document.getElementById('in-progress' + position).classList.remove('d-none1');
         document.getElementById('testing' + position).classList.add('d-none1');
     }
 }
 async function goBackToTesting(position) {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
-    for (let i = 0; i < users[currentUserPosition].tasks.length; i++) {
+    await initTasks();
+    for (let i = 0; i < tasks.length; i++) {
         document.getElementById('done' + position).classList.add('d-none1');
         document.getElementById('testing' + position).classList.remove('d-none1');
     }
@@ -474,46 +451,30 @@ async function goBackToTesting(position) {
 // delete task
 
 async function deleteTaskToDo(position) {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
-    for (let i = 0; i < users.length; i++) {
-        users[i].tasks.splice(position, 1);
-    }
-    backend.setItem('users', JSON.stringify(users));
+    await initTasks();
+    tasks.splice(position, 1);
+    backend.setItem('tasks', JSON.stringify(tasks));
     showBoardTasks();
 }
 
 async function deleteTaskInProgress(position) {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
-    for (let i = 0; i < users.length; i++) {
-        users[i].tasks.splice(position, 1);
-    }
-    backend.setItem('users', JSON.stringify(users));
+    await initTasks();
+    tasks.splice(position, 1); 
+    backend.setItem('tasks', JSON.stringify(tasks));
     showBoardTasks();
 }
 
 async function deleteTaskTesting(position) {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
-    for (let i = 0; i < users.length; i++) {
-        users[i].tasks.splice(position, 1);
-    }
-    backend.setItem('users', JSON.stringify(users));
+    await initTasks();
+    tasks.splice(position, 1);
+    backend.setItem('tasks', JSON.stringify(tasks));
     showBoardTasks();
 }
 
 async function deleteTaskDone(position) {
-    await init();
-    getCurrentUserPosition();
-    currentUserPosition = localStorage.getItem('currentUserPosition');
-    for (let i = 0; i < users.length; i++) {
-        users[i].tasks.splice(position, 1);
-    }
-    backend.setItem('users', JSON.stringify(users));
+    await initTasks();
+    tasks.splice(position, 1);
+    backend.setItem('tasks', JSON.stringify(tasks));
     showBoardTasks();
 }
 /**
