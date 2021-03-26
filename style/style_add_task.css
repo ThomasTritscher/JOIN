@@ -336,7 +336,7 @@
     }
     .user-img {
         width: 2.5rem;
-        background-color: white;
+        background-color: rgb(102, 102, 102);
         border-radius: 50%;
     }
 }

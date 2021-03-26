@@ -22,13 +22,13 @@ function profileTemplate(userPosition) {
     return `<form action="../php/uploadProfilePic.php" method="post" enctype="multipart/form-data">
         	    <div class="upload-elements"> 
                     <div id="buttonProfileSubmit" class="button-upload" onclick="getProfilePicture()"><img class="user-img-sidebar" id="userImgProfile" src=""></div>
-    
                     <div class="upload"><input id="profilePicUpload" type="file" value="upload"
                     name="profilePicUpload" onchange="subProfile(this)"></div>
         
                     <input type="submit" class="btn btn-primary btn-custom btn-custom" value="Upload">
                 </div>
             </form>
+            <span class="profilePicNote"><i>Note: Click the user picture to choose a new image.</i></span>
             <div class="profileItem"><span><b>Name:</b> ${users[userPosition].name}</span></div>
             <div class="profileItem"><span><b>Email:</b> ${users[userPosition].email}</span></div>
             <div class="profileItem"><span><b>Phone number:</b> ${users[userPosition].phoneNumber}</span></div>
