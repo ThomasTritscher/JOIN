@@ -240,6 +240,7 @@ function cancelTask() {
  */
 async function addTask() {
     await init();
+    await initTasks();
     getCurrentUserPosition();
     currentUserPosition = localStorage.getItem('currentUserPosition');
     getTitle();
