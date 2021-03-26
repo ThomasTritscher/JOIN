@@ -180,6 +180,19 @@ async function showUserPictureAddTask() {
     userImgAddTask.src = `../php/profiles/${users[currentUserPosition].userPicture}`;
 }
 
+async function showUserPictureMobile() {
+    await init();
+    let userImgMobile = document.getElementById('userImgMobile');
+    let currentUserPosition
+    currentUser = localStorage.getItem('currentUser');
+    for (let i = 0; i < users.length; i++) {
+        if (currentUser == users[i].name) {
+            currentUserPosition = i;
+        }
+    }
+    userImgMobile.src = `../php/profiles/${users[currentUserPosition].userPicture}`;
+}
+
 /**
  * This function loads the user input from input fields.
  */
