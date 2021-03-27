@@ -7,6 +7,8 @@ body {
 
 h3 {
     margin-bottom: 0.2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .main-content {
@@ -18,11 +20,6 @@ h3 {
     margin-left: 150px;
 }
 
-.dashboard-container {
-    display: flex;
-    margin-left: 2rem;
-    height: 100%;
-}
 
 .headline {
     margin-left: 45px;
@@ -91,43 +88,24 @@ h3 {
     color: white;
 }
 
-.dashboard-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 10rem;
-    height: 75%;
-}
 
-.dashboard-row {
-    display: flex;
-}
-
-.pushboard {
-    display: flex;
-    width: 85%;
-    height: 100%;
-    background-color: rgba(244, 243, 251, 1);
-    border-radius: 0.3rem;
-    margin-left: 0.75rem;
-    padding: 0.5rem;
-    overflow: auto;
-    overflow-x: hidden;
-}
 
 /* Desi test board task*/
+.board-sections {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90vw;
+}
 
-.container-board {
-    width: 180px;
-    background-color: white;
-    border-radius: 12px;
-    border: none;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    box-shadow: 0px 0px 4px lightgrey;
-    margin-bottom: 10px;
+.board-section {
+    height: 80vh;
+    width: 100%;
+    background-color: rgb(207, 205, 205);
+    border-radius: 10px;
+}
+
+.board-category {
+    width: 20%;
 }
 
 .d-flex {
@@ -211,6 +189,31 @@ h3 {
     cursor: pointer;
 }
 
+@media (max-width: 920px) {
+    .board-sections {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100vw;
+    }
+    
+    .board-section {
+        height: 50vh;
+        width: 95%;
+        background-color: rgb(207, 205, 205);
+        border-radius: 40px;
+        margin: 16px;
+    } 
+
+    .board-category {
+        width: 100%;
+    }
+
+    .main-content {
+        height: 244vh;
+    }
+}
+
 @media (max-width: 1143px) {
     .hide-element-menu {
         display: none !important;
@@ -269,29 +272,7 @@ h3 {
         margin-top: 8px;
         margin-left: 8px;
     }
-    .dashboard-container {
-        display: flex;
-        margin-left: 0;
-    }
-    .dashboard-row {
-        display: flex;
-        flex-direction: column;
-    }
-    .dashboard-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 22rem;
-        height: 52rem;
-    }
-    .pushboard {
-        display: flex;
-        width: 210px;
-        height: 65%;
-        background-color: rgba(244, 243, 251, 1);
-        border-radius: 0.3rem;
-        padding: 1rem;
-    }
+
     h3 {
         font-size: 0.9rem !important;
     }
