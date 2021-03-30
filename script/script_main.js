@@ -279,7 +279,10 @@ async function addTask() {
     newTask = { 'name': users[currentUserPosition].name, 'email': users[currentUserPosition].email, 'type': 'toDo', 'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'color': categoryColor, 'urgency': taskUrgency, 'description': taskDescription };
     tasks.push(newTask);
     backend.setItem('tasks', JSON.stringify(tasks));
-    alert('Task added successfully!');
+    alert('Task wurde erfolgreich erstellt!')
+    setTimeout(function() {
+        window.location.href = "../sites/board.html";
+    },1000);
 }
 
 /**
