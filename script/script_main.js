@@ -149,7 +149,7 @@ function addUser() {
         users.push(newUser);
         backend.setItem('users', JSON.stringify(users));
         alert('Profil erfolgreich erstellt!')
-        window.location.href = "../sites/add_task.html";
+        window.location.href = "../sites/login.html";
         
     } else {
         alert(`Passwort nicht korrekt`);
@@ -276,7 +276,7 @@ async function addTask() {
     getCategory();
     getUrgency();
     getDescription();
-    newTask = { 'name': users[currentUserPosition].name, 'email': users[currentUserPosition].email, 'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'color': categoryColor, 'urgency': taskUrgency, 'description': taskDescription };
+    newTask = { 'name': users[currentUserPosition].name, 'email': users[currentUserPosition].email, 'type': 'toDo', 'title': taskTitle, 'date': taskDate, 'category': taskCategory, 'color': categoryColor, 'urgency': taskUrgency, 'description': taskDescription };
     tasks.push(newTask);
     backend.setItem('tasks', JSON.stringify(tasks));
     alert('Task added successfully!');
@@ -327,7 +327,9 @@ async function showBoardTaskToDo() {
     let pushboardToDo = document.getElementById('pushboard-to-do');
     pushboardToDo.innerHTML = '';
     for (let i = 0; i < tasks.length; i++) {
-        pushboardToDo.innerHTML += generateBoardToDo(i);
+        if(tasks[i].type == 'toDo') {
+            pushboardToDo.innerHTML += generateBoardToDo(i);
+        }
     }
 }
 
@@ -354,12 +356,14 @@ async function showBoardTaskInProgress() {
     let pushboardInProgress = document.getElementById('pushboard-in-progress');
     pushboardInProgress.innerHTML = '';
     for (let i = 0; i < tasks.length; i++) {
-        pushboardInProgress.innerHTML += generateBoardInProgress(i);
+        if(tasks[i].type == 'inProgress') {
+            pushboardInProgress.innerHTML += generateBoardInProgress(i);
+        }
     }
 }
 
 function generateBoardInProgress(taskPosition) {
-    return `<div id="in-progress${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="in-progress${taskPosition}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskInProgress('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
@@ -380,11 +384,13 @@ async function showBoardTaskTesting() {
     let pushboardTesting = document.getElementById('pushboard-testing');
     pushboardTesting.innerHTML = '';
     for (let i = 0; i < tasks.length; i++) {
-        pushboardTesting.innerHTML += generateBoardTesting(i);
+        if(tasks[i].type == 'testing') {
+            pushboardTesting.innerHTML += generateBoardTesting(i);
+        }
     }
 }
 function generateBoardTesting(taskPosition) {
-    return `<div id="testing${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="testing${taskPosition}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskTesting('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
@@ -405,11 +411,13 @@ async function showBoardTaskDone() {
     let pushboardDone = document.getElementById('pushboard-done');
     pushboardDone.innerHTML = '';
     for (let i = 0; i < tasks.length; i++) {
-        pushboardDone.innerHTML += generateBoardDone(i);
+        if(tasks[i].type == 'done') {
+            pushboardDone.innerHTML += generateBoardDone(i);
+        }
     }
 }
 function generateBoardDone(taskPosition) {
-    return `<div id="done${taskPosition}" class="container-board d-none1" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
+    return `<div id="done${taskPosition}" class="container-board" style="border-left: 12px solid ${tasks[taskPosition].color}" draggable="true" ondragstart="dragstart(event)">
     <div class="d-flex date-img-container">
     <div class="blue board-bold">${tasks[taskPosition].title}</div>
     <div class="dustbin" style="font-size: 10px"><img onclick="deleteTaskDone('${taskPosition}')" height="20px" src="./../img/icons/trash.png"></div>
@@ -425,7 +433,7 @@ function generateBoardDone(taskPosition) {
 `;
 }
 async function showBoardTasks() {
-    await init();
+    await initTasks();
     showBoardTaskToDo();
     showBoardTaskInProgress();
     showBoardTaskTesting();
@@ -436,46 +444,52 @@ async function showBoardTasks() {
 async function goToInProgress(position) {
     await initTasks();
     for (let i = 0; i < tasks.length; i++) {
-        document.getElementById('to-do' + position).classList.add('d-none1');
-        document.getElementById('in-progress' + position).classList.remove('d-none1');
+        tasks[position].type = 'inProgress';
     }
+    backend.setItem('tasks', JSON.stringify(tasks));
+    showBoardTasks();
 }
 
 async function goBackToDo(position) {
     await initTasks();
     for (let i = 0; i < tasks.length; i++) {
-        document.getElementById('to-do' + position).classList.remove('d-none1');
-        document.getElementById('in-progress' + position).classList.add('d-none1');
+        tasks[position].type = 'toDo';
     }
+    backend.setItem('tasks', JSON.stringify(tasks));
+    showBoardTasks();
 }
 
 async function goToTesting(position) {
     await initTasks();
     for (let i = 0; i < tasks.length; i++) {
-        document.getElementById('testing' + position).classList.remove('d-none1');
-        document.getElementById('in-progress' + position).classList.add('d-none1');
+        tasks[position].type = 'testing';
     }
+    backend.setItem('tasks', JSON.stringify(tasks));
+    showBoardTasks();
 }
 async function goToDone(position) {
     await initTasks();
     for (let i = 0; i < tasks.length; i++) {
-        document.getElementById('done' + position).classList.remove('d-none1');
-        document.getElementById('testing' + position).classList.add('d-none1');
+        tasks[position].type = 'done';
     }
+    backend.setItem('tasks', JSON.stringify(tasks));
+    showBoardTasks();
 }
 async function goBackInProgress(position) {
     await initTasks();
     for (let i = 0; i < tasks.length; i++) {
-        document.getElementById('in-progress' + position).classList.remove('d-none1');
-        document.getElementById('testing' + position).classList.add('d-none1');
+        tasks[position].type = 'inProgress';
     }
+    backend.setItem('tasks', JSON.stringify(tasks));
+    showBoardTasks();
 }
 async function goBackToTesting(position) {
     await initTasks();
     for (let i = 0; i < tasks.length; i++) {
-        document.getElementById('done' + position).classList.add('d-none1');
-        document.getElementById('testing' + position).classList.remove('d-none1');
+        tasks[position].type = 'testing';
     }
+    backend.setItem('tasks', JSON.stringify(tasks));
+    showBoardTasks();
 }
 // delete task
 
